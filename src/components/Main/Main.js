@@ -45,7 +45,7 @@ class Portfolio extends Component {
         }
 
         return (
-            <div key={'portfolio'} id="portfolio">
+            <div key={'portfolio'} class="main">
                 <div key={resume.id}>
                     {introduction_info}
                     {about_info}
