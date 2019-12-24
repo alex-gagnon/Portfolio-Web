@@ -47,21 +47,11 @@ class Portfolio extends Component {
         return (
             <div key={'portfolio'} id="portfolio">
                 <div key={resume.id}>
-                    <section id="portfolio-intro-info" className="portfolio-section">
-                        {introduction_info}
-                    </section>
-                    <section id="portfolio-about-info" className="portfolio-section">
-                        {about_info}
-                    </section>
-                    <div id="portfolio-about-info" className="portfolio-section">
-                        {technology_info}
-                    </div>
-                    <section id="portfolio-experience-info" className="portfolio-section">
-                        {experience_info}
-                    </section>
-                    <section id="portfolio-contact-info" className="portfolio-section">
-                        {contact_info}
-                    </section>
+                    {introduction_info}
+                    {about_info}
+                    {technology_info}
+                    {experience_info}
+                    {contact_info}
                 </div>
                 <hr/>
                 <Button id="return-to-top" variant="outline-dark" href="/#">
