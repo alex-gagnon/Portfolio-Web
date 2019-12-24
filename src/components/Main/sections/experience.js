@@ -1,5 +1,5 @@
 import React from "react";
-import friendlyDates from "../../_includes/friendlyDates";
+import friendlyDates from "../../Utils/friendlyDates";
 import TabContainer from "react-bootstrap/TabContainer";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
