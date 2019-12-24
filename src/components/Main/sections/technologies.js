@@ -2,7 +2,7 @@ import React from "react";
 
 function technologies() {
     return (
-        <div id="about" className="container-fluid">
+        <section id="about" className="container-fluid">
             <div className="anchor">
                 <div className="card">
                     <div className="card-header">
@@ -33,7 +33,7 @@ function technologies() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

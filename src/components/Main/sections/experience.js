@@ -1,5 +1,5 @@
 import React from "react";
-import friendlyDates from "../_includes/friendlyDates";
+import friendlyDates from "../../_includes/friendlyDates";
 import TabContainer from "react-bootstrap/TabContainer";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,7 +9,7 @@ import TabPane from "react-bootstrap/TabPane";
 
 function experience(resume) {
     return (
-        <div id="experience" className="anchor container-fluid">
+        <section id="experience" className="anchor container-fluid">
             <div className="card experience">
                 <div className="card-header">
                     <h3 className="text-center">
@@ -57,7 +57,7 @@ function experience(resume) {
                     </TabContainer>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

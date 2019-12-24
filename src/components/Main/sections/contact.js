@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 
 function contact() {
     return (
-        <div id="contact" className="container-fluid">
+        <section id="contact" className="container-fluid">
             <div className="card">
                 <div className="card-header">
                     <h3 className="text-center">
@@ -16,7 +16,7 @@ function contact() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
