@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import '../assets/css/resume.css'
-import contactInfo from "./_resumeInfo/contactInfo";
-import employmentInfo from "./_resumeInfo/employmentInfo";
-import skillInfo from "./_resumeInfo/skillInfo";
-import educationInfo from "./_resumeInfo/educationInfo";
-import extraInfo from "./_resumeInfo/extraInfo";
+import contactInfo from "../_resumeInfo/contactInfo";
+import employmentInfo from "../_resumeInfo/employmentInfo";
+import skillInfo from "../_resumeInfo/skillInfo";
+import educationInfo from "../_resumeInfo/educationInfo";
+import extraInfo from "../_resumeInfo/extraInfo";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 

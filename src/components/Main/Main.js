@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
-import '../assets/scss/portfolio.scss'
-import about from "./_portfolioInfo/about";
-import experience from "./_portfolioInfo/experience"
-import contact from "./_portfolioInfo/contact";
-import introduction from "./_portfolioInfo/introduction";
-import technologies from "./_portfolioInfo/technologies";
+import about from "./sections/about";
+import experience from "./sections/experience"
+import contact from "./sections/contact";
+import introduction from "./sections/introduction";
+import technologies from "./sections/technologies";
+import Arrow from '../../assets/images/returnArrow.svg'
 import Button from "react-bootstrap/Button";
-import Arrow from '../assets/images/returnArrow.svg'
 import Image from "react-bootstrap/Image";
-import footer from "./_portfolioInfo/footer";
 
 class Portfolio extends Component {
     constructor(props) {
@@ -34,7 +32,6 @@ class Portfolio extends Component {
         let technology_info;
         let experience_info;
         let contact_info;
-        let footer_info;
 
 
         const resume = this.state.resume;
@@ -45,7 +42,6 @@ class Portfolio extends Component {
             technology_info = technologies();
             experience_info = experience(resume);
             contact_info = contact();
-            footer_info = footer();
         }
 
         return (
@@ -68,7 +64,6 @@ class Portfolio extends Component {
                     </section>
                 </div>
                 <hr/>
-                {footer_info}
                 <Button id="return-to-top" variant="outline-dark" href="/#">
                     <Image src={Arrow} height="45" width="45"/>
                 </Button>
