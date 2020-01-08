@@ -11,18 +11,20 @@ import Image from "react-bootstrap/Image";
 class Portfolio extends Component {
     constructor(props) {
         super(props);
-        this.state = {resume: []};
+        this.state = {
+            resume: []
+        };
     }
 
     componentDidMount() {
-        fetch('/api/resume')
+        fetch('/api/v1/resume')
             .then(res => {
                 return res.json()
             })
             .then((resume) => {
                 this.setState({resume});
             }).catch((err) => {
-            console.log(err);
+                console.log(err);
         });
     }
 

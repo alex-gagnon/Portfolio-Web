@@ -7,7 +7,7 @@ import Nav from "react-bootstrap/Nav";
 import TabContent from "react-bootstrap/TabContent";
 import TabPane from "react-bootstrap/TabPane";
 
-function experience(resume) {
+const experience = (resume) => {
     return (
         <section id="experience" className="anchor container-fluid">
             <div className="card experience">

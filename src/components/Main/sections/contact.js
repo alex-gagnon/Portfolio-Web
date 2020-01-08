@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-function contact() {
+const contact = () => {
     return (
         <section id="contact" className="container-fluid">
             <div className="card">

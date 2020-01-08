@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function introduction(resume) {
+const introduction = (resume) => {
     return (
         <section className="portfolio-section container-fluid anchor">
             <div className="content">

@@ -1,6 +1,6 @@
 import React from "react";
 
-function technologies() {
+const technologies = () => {
     return (
         <section id="about" className="container-fluid">
             <div className="anchor">
