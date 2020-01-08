@@ -1,6 +1,6 @@
 import React from "react";
 
-const technologies = () => {
+const Skillset = () => {
     return (
         <section id="about" className="container-fluid">
             <div className="anchor">
@@ -37,4 +37,4 @@ const technologies = () => {
     )
 }
 
-export default technologies;
+export default Skillset;

@@ -7,7 +7,7 @@ import Nav from "react-bootstrap/Nav";
 import TabContent from "react-bootstrap/TabContent";
 import TabPane from "react-bootstrap/TabPane";
 
-const experience = (resume) => {
+const Experience = (resume) => {
     return (
         <section id="experience" className="anchor container-fluid">
             <div className="card experience">
@@ -61,4 +61,4 @@ const experience = (resume) => {
     )
 }
 
-export default experience;
+export default Experience;

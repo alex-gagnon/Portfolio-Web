@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import about from "./sections/about";
-import experience from "./sections/experience"
-import contact from "./sections/contact";
-import introduction from "./sections/introduction";
-import technologies from "./sections/technologies";
+import About from "./sections/About";
+import Experience from "./sections/Experience"
+import Contact from "./sections/Contact";
+import Introduction from "./sections/Introduction";
+import Skillset from "./sections/Skillset";
 import Arrow from '../../assets/images/returnArrow.svg'
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
@@ -29,31 +29,16 @@ class Portfolio extends Component {
     }
 
     render() {
-        let introduction_info;
-        let about_info;
-        let technology_info;
-        let experience_info;
-        let contact_info;
-
-
         const resume = this.state.resume;
-
-        if (resume) {
-            introduction_info = introduction(resume);
-            about_info = about();
-            technology_info = technologies();
-            experience_info = experience(resume);
-            contact_info = contact();
-        }
 
         return (
             <div key={'portfolio'} class="main">
-                <div key={resume.id}>
-                    {introduction_info}
-                    {about_info}
-                    {technology_info}
-                    {experience_info}
-                    {contact_info}
+                <div>
+                    <Introduction/>
+                    <About/>
+                    <Experience/>
+                    <Skillset/>
+                    <Contact/>
                 </div>
                 <hr/>
                 <Button id="return-to-top" variant="outline-dark" href="/#">

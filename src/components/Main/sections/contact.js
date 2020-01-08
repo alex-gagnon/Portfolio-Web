@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-const contact = () => {
+const Contact = () => {
     return (
         <section id="contact" className="container-fluid">
             <div className="card">
@@ -20,4 +20,4 @@ const contact = () => {
     )
 }
 
-export default contact;
+export default Contact;
