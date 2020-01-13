@@ -1,0 +1,14 @@
+body {
+    background-color: #111;
+}
+
+.screen {
+    color: #8df776;
+    position: absolute;
+    background: #000;
+    border-radius: 50px;
+    height: 80vh;
+    width: 80vw;
+    padding: 5px 5px 5px 0;
+    overflow: hidden;
+}
