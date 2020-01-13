@@ -1,6 +1,6 @@
 nav {
     height: 10vh;
-    width: 70vw;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -19,5 +19,11 @@ nav {
     margin-left: 14px;
     font-weight: 300;
     cursor: pointer;
+}
+
+.menuItems .active {
+    border: 2px solid #8df776;
+    border-radius: 15px;
+    padding: 15px;
 }
 

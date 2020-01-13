@@ -8,11 +8,9 @@ class App extends Component {
   }
 
   render() {
-    const nav = ['intro', 'projects', 'more']
-
     return (
       <div className="container">
-        <PipBoy nav={nav}/>
+        <PipBoy />
       </div>
     );
   }

@@ -18,13 +18,16 @@ class PipBoy extends Component {
     }
 
     render() {
-        const {isActive} = this.state;
         console.log(this.props.nav)
 
         return (
-            <div className="screen-border">
-                <div className="screen">
-                    <Header menuChildren={this.props.nav}/>
+            <div className="console">
+                <div className="screen-border">
+                    <div className="screen">
+                        <div className="screen-reflection"></div>
+                        <div className="screen-scan"></div>
+                        <Header menuItems={this.props.nav}/>
+                    </div>
                 </div>
             </div>
         )

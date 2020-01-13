@@ -1,45 +1,53 @@
 import React, {Component} from 'react';
-import './Header.pip.css';
+import './PipBoy.header.css';
 
+
+const MenuItems = props => (
+    <div id={`menu-item-${props.item.id}`}>
+        <span>{props.item.text}</span>
+    </div>
+)
+
+let id = 0
 
 class Header extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
-            isActive: false,
-            menuChildren: []
+            menuItems: []
         }
-
-        this.toggleActive = this.toggleActive.bind(this);
     }
 
     componentDidMount() {
         this.setState({
-            menuChildren: this.props.menuChildren
+            menuItems: this.state.menuItems
         })
     }
 
-    toggleActive() {
+    toggleActive(id) {
         this.setState({
-            isActive: !this.state.isActive
+            menuItems: this.state.menuItems.map(menuChild => {
+                if (menuChild.id !== id) return menuChild
+                return {
+                    id: menuChild.id,
+                    text: menuChild.text,
+                    active: !menuChild.active
+                }
+            })
         })
     }
 
     render() {
-        const menuChildren = this.state.menuChildren.map((item, i) => 
-            <div className={this.state.isActive ? 'active' : null}>
-                <span className={`menuItems`}
-                    id={`menu-item-${i}`} 
-                    key={`menu-item-${i}`}
-                    onClick={this.toggleActive}>{item.toUpperCase()}</span>
-            </div>
-            )
 
         return (
             <div>                
                 <nav>
-                    {menuChildren}
+                {this.state.menuItems.map(item => 
+                    <MenuItems className="menu-item"
+                    key={"menu-item" + item.id}
+                    item={item}
+                    onToggle={() => this.toggleActive(item.id)} />
+                )}
                 </nav>  
             </div>
         )
