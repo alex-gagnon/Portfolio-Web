@@ -1,0 +1,30 @@
+nav {
+    height: 10vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 1px solid #8df776;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 95;
+}
+
+.menuItems {
+    line-height: 31px;
+    font-size: 1.25rem;
+    letter-spacing: 0.3px;
+    margin-left: 14px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.menuItems .active {
+    border: 2px solid #8df776;
+    border-radius: 15px;
+    padding: 15px;
+}
+
