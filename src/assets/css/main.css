@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Roboto Slab', serif;
+    src: url("../fonts/RobotoSlab/RobotoSlab-Regular.ttf")
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto Slab", serif;
+    background-color: rgba(255, 255, 255, 0.884);
+}
+
+/* Typography */
+
+#brand {
+    font-size: 32px;
+    color: #FD3A0F;
+}

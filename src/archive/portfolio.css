@@ -1,0 +1,154 @@
+body {
+    background-color: rgba(255, 255, 255, 0.884);
+}
+
+.bg-light {
+    background-color: rgba(0, 0, 0, .4) !important;
+}
+
+.btn {
+    padding: .8rem 1.4rem;
+    font-size: 1.5rem;
+}
+
+.navbar-toggler {
+    margin: 10px 0;
+}
+
+#portfolio {
+    margin-top: 80px;
+    color: #1d1f20;
+}
+
+.portfolio-section {
+    margin: 12vh 0;
+}
+
+/* Return to top button */
+#return-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 14px;
+    padding: 6px;
+}
+
+#portfolio-intro-summary {
+    font-size: 14px;
+}
+
+/* Prevent Navigation bar overlap of anchors */
+.anchor::before {
+    display: block;
+    content: " ";
+    margin-top: -90px;
+    height: 95px;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.card {
+    background-color: #D4F7D4;
+    box-shadow: 1px 2px 8px #000;
+}
+
+.card-header {
+    background-color: #49180D;
+    color: #D4F7D4;
+}
+
+.card-text, .card-link {
+    padding: 15px;
+}
+
+p span {
+    font-size: 24px;
+}
+
+/* About */
+.latest-technologies {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.latest-technologies ul {
+    font-size: 16px;
+}
+
+/* Experience */
+
+.job-name {
+    text-align: center;
+    font-size: .8rem;
+}
+
+.job-experience {
+    padding: 15px;
+}
+
+.job-experience * {
+    font-size: 1.2rem;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: #FD3A0F;
+}
+
+a {
+    color: #FD3A0F;
+}
+
+@media only screen and (min-width: 800px) {
+    /* Keep Nav buttons close together so Tab Content does not change spacing. */
+    .experience {
+        min-height: 400px;
+    }
+
+    #row-experience {
+        height: 3rem;
+    }
+
+    .job-name {
+        font-size: 1rem;
+        text-align: initial;
+    }
+
+    .job-experience {
+        padding: 0;
+    }
+
+    .job-experience * {
+        font-size: 1.4rem;
+    }
+}
+
+.btn-outline-info, btn-outline-info:active {
+    color: #FD3A0F;
+    border-color: #FD3A0F;
+}
+
+.btn-outline-info:hover, .btn-outline-info:focus {
+    color: #B83214;
+    border-color: #B83214;
+}
+
+/* Contact */
+#contact-footer {
+    background-color: #49180D;
+    display: flex;
+    justify-content: center;
+}
+
+#contact-footer ul {
+    display: flex;
+}
+
+#contact-footer ul li {
+    margin: 20px 25px;
+    font-size: 18px;
+}
+
+.contact-footer-item, .contact-footer-item:active,
+.contact-footer-item:focus, .contact-footer-item:hover {
+    color: #D4F7D4;
+}
