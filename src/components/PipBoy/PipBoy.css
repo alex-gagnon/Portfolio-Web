@@ -39,12 +39,12 @@ body {
 
 .screen-reflection {
     background: linear-gradient(150deg, #fff, rgba(0,0,0,0));
-    position: relative;
+    position: absolute;
     opacity: .08;
-    z-index: 96;
     border-radius: 10px;
     width: 90%;
     height: 90%;
+    z-index: 99;
 }
 
 .screen-scan {
@@ -56,7 +56,6 @@ body {
     animation-duration: 4s;
     animation-iteration-count: infinite;
     opacity: 0.25;
-    z-index: 99;
 }
 
 @keyframes scan {

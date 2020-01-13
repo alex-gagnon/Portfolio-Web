@@ -8,8 +8,6 @@ const MenuItems = props => (
     </div>
 )
 
-let id = 0
-
 class Header extends Component {
     constructor(props) {
         super(props)

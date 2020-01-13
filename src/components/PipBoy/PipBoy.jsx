@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './PipBoy.css'
 import Header from './Header/Header';
+import Main from './Main/Main';
 
 class PipBoy extends Component {
     constructor(props) {
@@ -24,9 +25,11 @@ class PipBoy extends Component {
             <div className="console">
                 <div className="screen-border">
                     <div className="screen">
-                        <div className="screen-reflection"></div>
+                        <div className="screen-reflection">
+                        </div>
                         <div className="screen-scan"></div>
                         <Header menuItems={this.props.nav}/>
+                        <Main />
                     </div>
                 </div>
             </div>
