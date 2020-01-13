@@ -10,6 +10,8 @@ class Header extends Component {
             isActive: false,
             menuChildren: []
         }
+
+        this.toggleActive = this.toggleActive.bind(this);
     }
 
     componentDidMount() {
@@ -18,9 +20,20 @@ class Header extends Component {
         })
     }
 
+    toggleActive() {
+        this.setState({
+            isActive: !this.state.isActive
+        })
+    }
+
     render() {
-        const menuChildren = this.state.menuChildren.map(
-            (item, i) => <span key={i}>{item.toUpperCase()}</span>
+        const menuChildren = this.state.menuChildren.map((item, i) => 
+            <div className={this.state.isActive ? 'active' : null}>
+                <span className={`menuItems`}
+                    id={`menu-item-${i}`} 
+                    key={`menu-item-${i}`}
+                    onClick={this.toggleActive}>{item.toUpperCase()}</span>
+            </div>
             )
 
         return (
