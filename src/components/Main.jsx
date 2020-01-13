@@ -8,8 +8,8 @@ class Main extends Component {
 
     render() {
         return (
-            <div className="container">
-
+            <div>
+                <p>In Progress</p>
             </div>
         )
     }
