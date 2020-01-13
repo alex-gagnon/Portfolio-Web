@@ -11,9 +11,6 @@ class Header extends Component {
         return (
             <div>
                 <nav>
-                    <span>INTRO</span>
-                    <span>PROJECTS</span>
-                    <span>MORE</span>
                 </nav>   
             </div>
         )
