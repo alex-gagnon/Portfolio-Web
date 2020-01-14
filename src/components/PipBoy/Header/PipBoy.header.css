@@ -1,4 +1,4 @@
-nav {
+.pip-navigation {
     height: 10vh;
     width: 100%;
     position: absolute;
@@ -9,22 +9,51 @@ nav {
     border-bottom: 1px solid #8df776;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    z-index: 95;
+    z-index: 90;
 }
 
-.menuItems {
-    line-height: 31px;
-    font-size: 1.25rem;
+    
+.pip-navigation__wrapper {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-end;
+    z-index:87
+}
+
+.pip-navigation__border {
+    width: 100%;
+    height: 12px;
+    padding: 0 5px;
+    margin: 2px 0;
+    display: flex;
+    position: relative;
+    z-index: 92;
+}
+   
+.active {
+    background: #000;
+    border-right:1px solid #8df776;
+    border-left:1px solid #8df776;
+    border-bottom:2px solid #000;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    position: absolute;
+}
+
+.menu-items {
+    z-index: 93;
     letter-spacing: 0.3px;
-    margin-left: 14px;
-    font-weight: 300;
-    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.2rem;
 }
 
-.menuItems .active {
-    border: 2px solid #8df776;
-    border-radius: 15px;
-    padding: 15px;
+@media only screen and (min-width: 750px) {
+    .pip-navigation__border {
+        height: 20px;
+    }
+    
+    .menu-items {
+        font-size: 2rem;
+    }    
 }
-

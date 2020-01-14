@@ -3,51 +3,38 @@ import './PipBoy.header.css';
 
 
 const MenuItems = props => (
-    <div id={`menu-item-${props.item.id}`}>
-        <span>{props.item.text}</span>
-    </div>
+    props.children.map((item, i) => (     
+        <div className="pip-navigation__wrapper">
+            <div className={i === 0 ? 'active pip-navigation__border' : 'pip-navigation__border'}></div>
+            <div id={'menu-item-' + i} 
+                key={'menu-item-' + i}
+                className={'menu-items'}>
+                <span>{item.toUpperCase()}</span>
+            </div>
+        </div> 
+        )
+    )
 )
 
 class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            menuItems: []
+            children: []
         }
     }
 
     componentDidMount() {
         this.setState({
-            menuItems: this.state.menuItems
-        })
-    }
-
-    toggleActive(id) {
-        this.setState({
-            menuItems: this.state.menuItems.map(menuChild => {
-                if (menuChild.id !== id) return menuChild
-                return {
-                    id: menuChild.id,
-                    text: menuChild.text,
-                    active: !menuChild.active
-                }
-            })
+            children: this.props.children
         })
     }
 
     render() {
-
-        return (
-            <div>                
-                <nav>
-                {this.state.menuItems.map(item => 
-                    <MenuItems className="menu-item"
-                    key={"menu-item" + item.id}
-                    item={item}
-                    onToggle={() => this.toggleActive(item.id)} />
-                )}
-                </nav>  
-            </div>
+        return (               
+            <nav className="pip-navigation">
+                <MenuItems children={this.props.children} />
+            </nav>
         )
     }
 }
