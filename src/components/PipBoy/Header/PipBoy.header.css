@@ -1,7 +1,6 @@
 .pip-navigation {
-    height: 10vh;
+    height: 5vh;
     width: 100%;
-    position: absolute;
     top: 0;
     left: 0;
     border-top-left-radius: 20px;
@@ -10,6 +9,7 @@
     display: flex;
     justify-content: space-evenly;
     z-index: 90;
+    position: absolute;
 }
 
     
@@ -23,12 +23,13 @@
 
 .pip-navigation__border {
     width: 100%;
-    height: 12px;
+    height: 10px;
     padding: 0 5px;
-    margin: 2px 0;
+    margin: -2px 0;
     display: flex;
     position: relative;
     z-index: 92;
+    position: absolute;
 }
    
 .active {
@@ -38,17 +39,21 @@
     border-bottom:2px solid #000;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
-    position: absolute;
 }
 
 .menu-items {
-    z-index: 93;
     letter-spacing: 0.3px;
     font-weight: 500;
     font-size: 1.2rem;
+    z-index: 100;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 750px) {
+    .pip-navigation {
+        height: 8vh;
+    }
+
     .pip-navigation__border {
         height: 20px;
     }
