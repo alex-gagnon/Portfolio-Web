@@ -1,42 +1,80 @@
 import React, {Component} from 'react';
 import './PipBoy.header.css';
+import PropTypes from 'prop-types';
 
 
 const MenuItems = props => (
-    props.children.map((item, i) => (     
-        <div className="pip-navigation__wrapper">
-            <div className={i === 0 ? 'active pip-navigation__border' : 'pip-navigation__border'}></div>
-            <div id={'menu-item-' + i} 
-                key={'menu-item-' + i}
-                className={'menu-items'}>
-                <span>{item.toUpperCase()}</span>
-            </div>
-        </div> 
-        )
-    )
+    <div key={'menu-item-' + props.item.id}
+        className={'pip-navigation__wrapper'}>
+        <div id={'flag-id-' + props.item.id} 
+            className={props.item.flagActive
+                ? 'pip-navigation__border active' 
+                : 'pip-navigation__border'}>
+        </div>
+        <div id={'menu-item-' + props.item.id}
+            className={'menu-items'}
+            onLoad={props.initActive}
+            onClick={props.onToggle}>
+            <span>{props.item.text.toUpperCase()}</span>
+        </div>
+    </div>
 )
 
 class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            children: []
+            children: [{id: 0, text: '', flagActive: false}]
         }
     }
 
-    componentDidMount() {
+    componentDidUpdate(prevProps) {
+        if (this.props.children !== prevProps.children) {
+            this.setState({
+                children: this.props.children.map(item => {
+                    return {
+                        id: item.id,
+                        text: item.text,
+                        flagActive: item.id === 0 ? true : false
+                    }
+                })
+            })
+        }
+    }
+
+    toggleActive(id) {
         this.setState({
-            children: this.props.children
+            children: this.state.children.map(item => {
+                // remove highlight from all items
+                item.flagActive = false
+                if (item.id !== id) return item
+                return {
+                    id: item.id,
+                    text: item.text,
+                    flagActive: !item.flagActive,
+                }
+            })
         })
     }
 
     render() {
         return (               
-            <nav className="pip-navigation">
-                <MenuItems children={this.props.children} />
+            <nav className="pip-navigation">                
+                {this.state.children.map(item => (
+                    <MenuItems className="pip-navigation__super"
+                        key={'pip-nav__item-' + item.id}
+                        item={item}
+                        onToggle={() => this.toggleActive(item.id)}/>
+                        )
+                    )
+                }
             </nav>
         )
     }
+}
+
+Header.propTypes = {
+    children: PropTypes.array.isRequired
 }
 
 export default Header;

@@ -3,6 +3,10 @@ import './PipBoy.css'
 import Header from './Header/Header';
 import Main from './Main/Main';
 
+
+let navItems = ['intro', 'projects', 'more'];
+let id = 0;
+
 class PipBoy extends Component {
     constructor(props) {
         super(props)
@@ -13,9 +17,10 @@ class PipBoy extends Component {
     }
 
     componentDidMount() {
-        let navItems = ['intro', 'projects', 'more']
         this.setState({
-            navItems: navItems
+            navItems: navItems.map(text => {
+                return {id: id++, text: text, flagActive: this.id  === 0 ? true : false}
+            })
         })
     }
 
