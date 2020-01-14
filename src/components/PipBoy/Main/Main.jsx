@@ -17,7 +17,7 @@ class Main extends Component {
 
     render() {
         return (
-            <div className="content">
+            <div className="pip-content">
                 <Offline text={this.state.text} />
             </div>
         )
