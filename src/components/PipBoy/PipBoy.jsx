@@ -8,19 +8,18 @@ class PipBoy extends Component {
         super(props)
 
         this.state = {
-            isActive: false
+            navItems: []
         }
     }
 
-    toggleActive() {
-        this.setState(prevState => ({
-            isActive: !prevState.isActive
-        }));
+    componentDidMount() {
+        let navItems = ['intro', 'projects', 'more']
+        this.setState({
+            navItems: navItems
+        })
     }
 
     render() {
-        console.log(this.props.nav)
-
         return (
             <div className="console">
                 <div className="screen-border">
@@ -28,7 +27,7 @@ class PipBoy extends Component {
                         <div className="screen-reflection">
                         </div>
                         <div className="screen-scan"></div>
-                        <Header menuItems={this.props.nav}/>
+                        <Header children={this.state.navItems}/>
                         <Main />
                     </div>
                 </div>
