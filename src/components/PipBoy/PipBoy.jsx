@@ -33,7 +33,7 @@ class PipBoy extends Component {
                         </div>
                         <div className="screen-scan"></div>
                         <Header children={this.state.navItems}/>
-                        <Main />
+                        <Main text={this.state.text} />
                     </div>
                 </div>
             </div>
