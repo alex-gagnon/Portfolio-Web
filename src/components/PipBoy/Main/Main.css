@@ -1,0 +1,9 @@
+main {
+    z-index: 99;
+}
+
+#pip-main-content {
+    min-height: 25vh;
+    padding: 0 15px;
+    z-index: 20;
+}
