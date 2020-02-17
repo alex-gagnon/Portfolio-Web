@@ -1,39 +1,60 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import './PipBoy.css'
-import Header from './Header/Header';
-import Main from './Main/Main';
-
-
-let navItems = ['intro', 'projects', 'more'];
-let id = 0;
+import data from '../Utils/data'
+import Footer from './Footer/Footer'
+import Header from './Header/Header'
+import Main from './Main/Main'
 
 class PipBoy extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            navItems: []
+            data: []
         }
+        
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick(e) {
+        let target = e.target
+        this.setHeader(target)
+    }
+
+    setHeader(target) {
+        let targetId = parseInt(target.id.split("nav-item-").join(""))
+        this.setState({
+            data: this.state.data.map((item, index) => {
+                // remove highlight from all items
+                item.isActive = false
+                if (targetId !== item._id) return item
+                console.log(item)
+                return {
+                    _id: item._id,
+                    name: item.name,
+                    value: item.value,
+                    isActive: !item.isActive,
+                }
+            })
+        })
     }
 
     componentDidMount() {
         this.setState({
-            navItems: navItems.map(text => {
-                return {id: id++, text: text, flagActive: this.id  === 0 ? true : false}
-            })
+            data: data
         })
     }
 
     render() {
         return (
-            <div className="console">
-                <div className="screen-border">
-                    <div className="screen">
-                        <div className="screen-reflection">
-                        </div>
-                        <div className="screen-scan"></div>
-                        <Header children={this.state.navItems}/>
-                        <Main text={this.state.text} />
+            <div id="console">
+                <div id="screen-border">
+                    <div id="screen">
+                        <div id="screen-reflection"></div>
+                        <div id="screen-scan"></div>
+                        <Header {...this.state} handleClick={this.handleClick} />
+                        <Main {...this.state} />
+                        <Footer />
                     </div>
                 </div>
             </div>

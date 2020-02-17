@@ -2,60 +2,64 @@ body {
     background-color: #111;
 }
 
-.console {
+#console {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
-.screen-border {
+#screen-border {
     background: #272b2a;
-    width: 78vw;
-    height: 90vh;
-    margin: 20px auto;
     border-radius: 50px;
     border-top: 10px solid #5a5f5b;
     border-bottom: 5px solid #3a3e41;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 78vw;
+    margin: 20px auto;
+    padding: 5vh 0;
     position: relative;
 }
 
-.screen {
+#screen {
+    font-size: 14px;
     color: #8df776;
     background: #000;
     border-radius: 50px;
     border: 8px solid #333;
     width: 65vw;
-    height: 75vh;
-    padding: 4px 4px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 55vh;
     position: relative;
+    overflow: hidden;
+    padding: 8px 0;
 }
 
-.screen-reflection {
+#screen-reflection {
     background: linear-gradient(150deg, #fff, rgba(0,0,0,0));
-    opacity: .08;
+    opacity: .13;
     border-radius: 10px;
-    width: 66vw;
-    height: 70vh;
-    z-index: 90;
+    width: 100%;
+    height: 100%;
     position: absolute;
+    z-index: 1;
 }
 
-.screen-scan {
+#screen-scan {
     width: 100%;
     height: 44px;
     background: linear-gradient(rgba(0,0,0,0), #7ff12a);
     animation: scan 5s linear infinite;
     opacity: 0.25;
-    z-index: 91;
     position: absolute;
+    z-index: 1;
+}
+
+#screen-content {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 15% auto auto;
 }
 
 @keyframes scan {
