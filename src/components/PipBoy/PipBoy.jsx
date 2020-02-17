@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './PipBoy.css'
-import data from '../Utils/data'
+import data from '../../utilities/data'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 import Main from './Main/Main'
