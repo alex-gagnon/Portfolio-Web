@@ -13,7 +13,7 @@ export default [
         ]
     },
     {
-        "name": "project",
+        "name": "projects",
         "value": [
             "Monk-E: An in-house microservices application to handle acquiring critical user data and generating reports on database analyses.",
             "Markdown Previewer: An application to perform quick checks using React.js."
@@ -21,7 +21,9 @@ export default [
     },
     {
         "name": "more",
-        "value": ["My portfolio is currently undergoing a redesign. So please bear with me while it is in progress."]
+        "value": [
+            "My portfolio is currently undergoing a redesign. So please bear with me while it is in progress."
+        ]
     }
 ].map((o, index) => (
     {
