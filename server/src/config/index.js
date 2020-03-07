@@ -1,6 +1,6 @@
 // Database configuration
 const config = {
+    DATA: "TEST"
+};
 
-}
-
-export default config
+module.exports = config;
