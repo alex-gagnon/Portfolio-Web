@@ -4,7 +4,8 @@ WORKDIR /app
 
 # A wildcard is used to ensure both package.json AND
 # package-lock.json are copied
-COPY package*.json .
+COPY package.json .
+COPY package-lock.json .
 
 ## Install only the packages defined in the package-lock.json (faster than normal npm install)
 RUN npm install
