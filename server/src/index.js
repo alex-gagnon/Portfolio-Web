@@ -1,4 +1,4 @@
-require ('dotenv').config()
+require('dotenv').config()
 
 // Express App Setup
 const express = require('express')
@@ -15,10 +15,21 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 
+// Data
+const {getAllQuotes, getRandomQuote} = require('./quotes')
+
 // Express Route Handlers
+app.get('/', (req, res) => {
+    res.send('Server is up.')
+})
+
 app.get('/test', (req, res) => {
     res.send('Working!')
 })
+
+// Quote API routers
+const quoteRouter = require('./routers')
+app.use('/v1/quotes', quoteRouter)
 
 // Server
 const port = process.env.PORT || 3001
