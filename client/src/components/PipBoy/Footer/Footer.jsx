@@ -5,19 +5,15 @@ class Footer extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            quote: ""
+            quote: "",
+            author: ""
         }
     }
 
-    componentDidMount() {
+    componentDidMount() {                
         fetch('/api/v1/quotes/random', {headers: {"accepts": "application/json"}})
-            .then(res => {
-                console.log(res)
-                this.setState({
-                    quote: res
-                })
-                return res.json()
-            })
+            .then(res => res.json())
+            .then(data => this.setState(data))
             .catch(err => {
                 console.log(err)
             })
