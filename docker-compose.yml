@@ -1,8 +1,8 @@
 version: '3'
 services:
-    ################################
-    #   Setup node container
-    ################################
+################################
+#   Setup node container
+################################
     server:
         build:
             context: ./server
@@ -14,14 +14,14 @@ services:
             - ${APP_SERVER_PORT}
         ports:
             - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
-        restart: on-failure
-        container_name: server
         volumes:
             - /app/node_modules
             - ./server:/app
-    ################################
-    #   Setup client container
-    ################################
+        restart: on-failure
+        container_name: server
+################################
+#   Setup client container
+################################
     client:
         build:
             context: ./client
