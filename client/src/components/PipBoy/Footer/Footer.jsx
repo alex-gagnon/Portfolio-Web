@@ -1,12 +1,21 @@
 import React, { Component } from 'react'
-import getRandomQuote from '../utilities/randomQuotes'
 import './Footer.css'
 
 class Footer extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            quote: ""
+        }
+    }
+
     componentDidMount() {
-        fetch('/api/v1/quotes', {headers: {"accepts": "application/json"}})
+        fetch('/api/v1/quotes/random', {headers: {"accepts": "application/json"}})
             .then(res => {
                 console.log(res)
+                this.setState({
+                    quote: res
+                })
                 return res.json()
             })
             .catch(err => {
@@ -15,13 +24,12 @@ class Footer extends Component {
     }
 
     render() {
-        let randomQuote = getRandomQuote()
         
         return (            
             <footer>
                 <div id="quotes-block">
-                    <p>“{randomQuote.quote}”</p>
-                    <p>- {randomQuote.author}</p>
+                    <p>“{this.state.quote}”</p>
+                    <p>- {this.state.author}</p>
                 </div>
             </footer>
         )

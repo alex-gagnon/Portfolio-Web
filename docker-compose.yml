@@ -1,24 +1,41 @@
 version: '3'
 services:
-    web-app:
-        build:
-            context: ./client
-            dockerfile: Dockerfile.dev
-        volumes:
-            - /app/node_modules
-            - ./client:/app
-        ports:
-            - '3000:3000'
-        restart: on-failure
-        container_name: web-app
-    portfolio-api:
-        build:
+    ################################
+    #   Setup node container
+    ################################
+    server:
+        build: 
             context: ./server
             dockerfile: Dockerfile.dev
+        expose:
+            - ${APP_SERVER_PORT}
+        environment:
+            API_HOST: ${API_HOST}
+            APP_SERVER_PORT: ${APP_SERVER_PORT}
         ports:
-            - '3001:3001'
+            - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
         restart: on-failure
-        container_name: portfolio-api
+        container_name: server
         volumes:
             - /app/node_modules
             - ./server:/app
+    ################################
+    #   Setup client container
+    ################################
+    client:
+        build:
+            context: ./client
+            dockerfile: Dockerfile.dev
+        environment: 
+            - REACT_APP_PORT=${REACT_APP_PORT}
+        expose:
+            - ${REACT_APP_PORT}
+        ports:
+            - '${REACT_APP_PORT}:${REACT_APP_PORT}'
+        volumes:
+            - /app/node_modules
+            - ./client:/app
+        links: 
+            - server
+        restart: on-failure
+        container_name: client

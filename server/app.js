@@ -8,15 +8,12 @@ const cors = require('cors')
 const uuid = require('uuid/v4')
 
 // Config
-const config = require('./config')
+//const config = require('./src/config/index')
 
 // Initialization
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
-
-// Data
-const {getAllQuotes, getRandomQuote} = require('./quotes')
 
 // Express Route Handlers
 app.get('/', (req, res) => {
@@ -28,7 +25,7 @@ app.get('/test', (req, res) => {
 })
 
 // Quote API routers
-const quoteRouter = require('./routers')
+const quoteRouter = require('./src/routers')
 app.use('/v1/quotes', quoteRouter)
 
 // Server
