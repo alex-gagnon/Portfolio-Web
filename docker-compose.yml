@@ -18,7 +18,6 @@ services:
             - /app/node_modules
             - ./server:/app
         restart: on-failure
-        container_name: server
 ################################
 #   Setup client container
 ################################
@@ -38,4 +37,3 @@ services:
         links: 
             - server
         restart: on-failure
-        container_name: client

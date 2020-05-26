@@ -26,9 +26,10 @@ app.get('/test', (req, res) => {
 
 // Quote API routers
 const quoteRouter = require('./src/routers')
-app.use('/v1/quotes', quoteRouter)
+// Start of path needs to match client proxy path ('/api')
+app.use('/api/v1/quotes', quoteRouter)
 
 // Server
-const port = process.env.PORT || 3001
+const port = process.env.APP_SERVER_PORT || 3001
 const server = http.createServer(app)
 server.listen(port, () => console.log(`Server running on port ${port}`))
