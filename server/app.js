@@ -29,6 +29,6 @@ const quoteRouter = require('./src/routers')
 app.use('/v1/quotes', quoteRouter)
 
 // Server
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 8000
 const server = http.createServer(app)
 server.listen(port, () => console.log(`Server running on port ${port}`))

@@ -23,8 +23,7 @@ class Footer extends Component {
             })
     }
 
-    render() {
-        
+    render() {        
         return (            
             <footer>
                 <div id="quotes-block">

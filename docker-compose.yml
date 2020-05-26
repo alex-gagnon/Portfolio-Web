@@ -4,14 +4,14 @@ services:
     #   Setup node container
     ################################
     server:
-        build: 
+        build:
             context: ./server
             dockerfile: Dockerfile.dev
-        expose:
-            - ${APP_SERVER_PORT}
         environment:
             API_HOST: ${API_HOST}
             APP_SERVER_PORT: ${APP_SERVER_PORT}
+        expose:
+            - ${APP_SERVER_PORT}
         ports:
             - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
         restart: on-failure
