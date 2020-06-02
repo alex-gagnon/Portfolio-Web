@@ -18,6 +18,8 @@ services:
             - /app/node_modules
             - ./server:/app
         restart: on-failure
+        image: agagnon227/portfolio-server
+        container_name: portfolio-server
 ################################
 #   Setup client container
 ################################
@@ -37,3 +39,5 @@ services:
         links: 
             - server
         restart: on-failure
+        image: agagnon227/portfolio-client
+        container_name: portfolio-client
