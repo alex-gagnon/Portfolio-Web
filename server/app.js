@@ -14,10 +14,11 @@ const uuid = require('uuid/v4')
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
+app.use(express.static('public'))
 
 // Express Route Handlers
 app.get('/', (req, res) => {
-    res.send('Server is up.')
+    res.sendFile('index.html', {root: __dirname})
 })
 
 app.get('/test', (req, res) => {
