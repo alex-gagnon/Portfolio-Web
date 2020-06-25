@@ -2,6 +2,11 @@
 
 This is a personal portfolio to showcase my work.
 
+## Pre-Requisites
+
+* Docker
+* Node.js
+
 ## To build with Docker
 
 1. Create `.env` file with the following defined (example values)
