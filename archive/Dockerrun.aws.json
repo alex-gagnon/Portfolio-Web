@@ -1,0 +1,92 @@
+{
+    "containerDefinitions": [
+        {
+            "environment": [
+                {
+                    "name": "REACT_APP_PORT",
+                    "value": "3000"
+                },
+                {
+                    "name": "APP_SERVER_PORT",
+                    "value": "3000"
+                }
+            ],
+            "essential": true,
+            "memory": 128,
+            "image": "agagnon227/portfolio-client",
+            "links": [
+                "server"
+            ],
+            "mountPoints": [
+                {
+                    "containerPath": "/app/node_modules",
+                    "sourceVolume": "AppNode_Modules"
+                },
+                {
+                    "containerPath": "/app",
+                    "sourceVolume": "_Client"
+                }
+            ],
+            "name": "client",
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000
+                }
+            ]
+        },
+        {
+            "environment": [
+                {
+                    "name": "API_HOST",
+                    "value": "http://localhost:3000"
+                },
+                {
+                    "name": "APP_SERVER_PORT",
+                    "value": "3001"
+                }
+            ],
+            "essential": true,
+            "memory": 128,
+            "image": "agagnon227/portfolio-server",
+            "mountPoints": [
+                {
+                    "containerPath": "/app/node_modules",
+                    "sourceVolume": "AppNode_Modules"
+                },
+                {
+                    "containerPath": "/app",
+                    "sourceVolume": "_Server"
+                }
+            ],
+            "name": "server",
+            "portMappings": [
+                {
+                    "containerPort": 3001,
+                    "hostPort": 3001
+                }
+            ]
+        }
+    ],
+    "family": "",
+    "volumes": [
+        {
+            "host": {
+                "sourcePath": "/app/node_modules"
+            },
+            "name": "AppNode_Modules"
+        },
+        {
+            "host": {
+                "sourcePath": "./server"
+            },
+            "name": "_Server"
+        },
+        {
+            "host": {
+                "sourcePath": "./client"
+            },
+            "name": "_Client"
+        }
+    ]
+}
