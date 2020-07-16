@@ -2,4 +2,10 @@ node_modules
 build
 .dockerignore
 Dockerfile
-Dockerfile.dev
+Dockerfile.dev# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.git
+.gitignore# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.git
+.gitignore
