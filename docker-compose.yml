@@ -9,6 +9,15 @@ services:
             dockerfile: Dockerfile.dev
         ports:
             - "8080:80"
+    api:
+        image: agagnon227/portfolio-api
+        container_name: api
+        build:
+            context: ./server
+            dockerfile: Dockerfile.dev
+        volumes:
+            - /app/node_modules
+            - ./server:/app
     client:
         image: agagnon227/portfolio
         container_name: client
@@ -18,3 +27,4 @@ services:
         volumes:
             - /app/node_modules
             - ./client:/app
+        

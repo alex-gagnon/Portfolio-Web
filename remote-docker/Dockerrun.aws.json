@@ -14,6 +14,13 @@
             ]
         },
         {
+            "name": "server",
+            "image": "agagnon227/portfolio-api",
+            "hostname": "api",
+            "essential": false,
+            "memory": 128
+        },
+        {
             "name": "nginx",
             "image": "agagnon227/nginx",
             "hostname": "nginx",
@@ -24,7 +31,7 @@
                     "hostPort": 80
                 }
             ],
-            "links": ["client"],
+            "links": ["client", "server"],
             "memory": 128
         }
     ]

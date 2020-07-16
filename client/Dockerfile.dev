@@ -3,6 +3,7 @@ FROM node:13.12.0-alpine
 WORKDIR /app
 
 ENV PATH /app/node_modules/.bin:$PATH
+
 COPY package.json ./
 
 ## Install only the packages defined in the package-lock.json (faster than normal npm install)
