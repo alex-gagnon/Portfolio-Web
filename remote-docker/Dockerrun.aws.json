@@ -3,9 +3,9 @@
     "containerDefinitions": [
         {
             "essential": true,
-            "image": "agagnon227/portfolio-client",
+            "image": "agagnon227/portfolio",
             "name": "client",
-            "memory": 300,
+            "memory": 2500,
             "portMappings": [
                 {
                     "containerPort": 80,
