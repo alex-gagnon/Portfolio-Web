@@ -1,10 +1,20 @@
-version: '3'
+version: "3"
 services:
+    nginx:
+        image: agagnon227/nginx
+        container_name: nginx
+        restart: always
+        build:
+            context: ./nginx
+            dockerfile: Dockerfile.dev
+        ports:
+            - "8080:80"
     client:
         image: agagnon227/portfolio
         container_name: client
         build:
-            context: client
-            dockerfile: Dockerfile
-        ports:
-            - 5000:80
+            context: ./client
+            dockerfile: Dockerfile.dev
+        volumes:
+            - /app/node_modules
+            - ./client:/app
