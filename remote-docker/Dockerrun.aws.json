@@ -4,6 +4,7 @@
         {
             "name": "client",
             "image": "agagnon227/portfolio",
+            "hostname": "client",
             "essential": true,
             "memory": 128,
             "portMappings": [
