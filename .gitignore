@@ -35,6 +35,9 @@ yarn-error.log*
 # Environment
 .env
 
+# Certifications
+certs/
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
