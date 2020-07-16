@@ -1,6 +1,7 @@
 version: '3'
 services:
     client:
+        image: agagnon227/portfolio
         container_name: client
         build:
             context: client
