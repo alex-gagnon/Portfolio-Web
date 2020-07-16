@@ -6,15 +6,15 @@ services:
         restart: always
         build:
             context: ./nginx
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile.dev
         ports:
-            - "80:80"
+            - "8080:80"
     api:
         image: agagnon227/multi-api
         container_name: api
         build:
             context: ./server
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile.dev
         volumes:
             - /app/node_modules
             - ./server:/app
@@ -23,7 +23,7 @@ services:
         container_name: client
         build:
             context: ./client
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile.dev
         volumes:
             - /app/node_modules
             - ./client:/app
