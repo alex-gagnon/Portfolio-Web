@@ -2,9 +2,9 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
-            "essential": true,
-            "image": "agagnon227/portfolio",
             "name": "client",
+            "image": "agagnon227/portfolio",
+            "essential": true,
             "memory": 128,
             "portMappings": [
                 {
@@ -12,8 +12,20 @@
                     "hostPort": 5000
                 }
             ]
+        },
+        {
+            "name": "nginx",
+            "image": "agagnon227/nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80
+                }
+            ],
+            "links": ["client"],
+            "memory": 128
         }
-    ],
-    "family": "",
-    "volumes": []
+    ]
   }
