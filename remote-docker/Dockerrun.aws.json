@@ -5,7 +5,7 @@
             "essential": true,
             "image": "agagnon227/portfolio",
             "name": "client",
-            "memory": 2500,
+            "memory": 128,
             "portMappings": [
                 {
                     "containerPort": 80,
