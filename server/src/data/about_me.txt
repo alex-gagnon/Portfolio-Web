@@ -1,0 +1,13 @@
+I started my career in software engineering roughly three years ago - stepping outside
+of my comfort zone to pursue a greater challenge. Versality is my bread and butter. I embrace
+the challenge of becoming a subject matter expert. Additionally, I specialize in adapting my
+frame of mind for the task at hand. No matter how adept I become in a certain area, 
+I'll never want to stop learning.
+
+Much of my work involves testing consumer technology and enterprise technology. However, I'm
+continually expanding my horizons. As a testing fiend, I love the thrill of uncovering what's 
+inside the bottle. That hunger for personal and professional growth drives me forward.
+
+What's next? I'm becoming proficient in other areas of the software development lifecycle
+including DevOps, backend engineering, and frontend design. Lately, I have been enjoying 
+building full-stack projects.
