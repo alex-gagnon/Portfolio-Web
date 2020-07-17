@@ -1,6 +1,7 @@
 FROM node:13.12.0-alpine
 
 WORKDIR /app
+EXPOSE 3000
 
 ENV PATH /app/node_modules/.bin:$PATH
 
@@ -13,4 +14,4 @@ RUN npm install
 COPY ./ ./
 
 # Run 'npm start' when the container starts
-CMD ["npm", "run", "start"]
+CMD ["npm", "start"]
