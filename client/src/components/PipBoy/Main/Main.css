@@ -6,4 +6,5 @@ main {
     min-height: 25vh;
     padding: 0 15px;
     z-index: 20;
+    font-size: 1.15em;
 }
