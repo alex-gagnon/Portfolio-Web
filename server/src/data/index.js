@@ -4,10 +4,11 @@ const getFile = (filename) => {
     // Split text by double new line
     return fs.readFileSync(`${__dirname}/${filename}`, 'utf-8').split(/(\r\n){2}/)
 }
-var home = getFile('home.txt')
-var about = getFile('about_me.txt')
-var projects = getFile('projects.txt')
-var more = getFile('more.txt')
+
+let home = getFile('home.txt')
+let about = getFile('about_me.txt')
+let projects = getFile('projects.txt')
+let more = getFile('more.txt')
 
 const data = [
     {
