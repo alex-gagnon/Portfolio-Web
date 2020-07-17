@@ -26,9 +26,13 @@ app.get('/test', (req, res) => {
 })
 
 // Quote API routers
-const quoteRouter = require('./src/routers')
+const quoteRouter = require('./src/routers/quotes')
 // Start of path needs to match client proxy path ('/api')
 app.use('/v1/quotes', quoteRouter)
+
+// Data API routers
+const dataRouter = require('./src/routers/data')
+app.use('/v1/data', dataRouter)
 
 // Server
 const port = process.env.APP_SERVER_PORT || 5000
