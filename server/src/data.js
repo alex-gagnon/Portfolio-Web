@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
         "name": "intro",
         "value": [
@@ -32,3 +32,5 @@ export default [
         isActive: index === 0 ? true : false
     }
 ))
+
+module.exports = data
