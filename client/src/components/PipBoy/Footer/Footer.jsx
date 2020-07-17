@@ -10,13 +10,15 @@ class Footer extends Component {
         }
     }
 
-    componentDidMount() {                
-        fetch('/api/v1/quotes/random', {headers: {"accepts": "application/json"}})
+    componentDidMount() {    
+        if (process.env.REACT_APP_CI !== 'false') {
+            fetch('/api/v1/quotes/random', {headers: {"accepts": "application/json"}})
             .then(res => res.json())
             .then(data => this.setState(data))
             .catch(err => {
                 console.log(err)
             })
+        }  
     }
 
     render() {        
