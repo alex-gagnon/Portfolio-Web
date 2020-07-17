@@ -11,7 +11,7 @@ class Footer extends Component {
     }
 
     componentDidMount() {    
-        if (process.env.REACT_APP_CI === 'test') {
+        if (process.env.NODE_ENV === 'test') {
             this.setState({
                 quote: "Testing Quote",
                 author: "Testing Author"
