@@ -31,8 +31,7 @@ class Footer extends Component {
         return (            
             <footer>
                 <div id="quotes-block">
-                    <p>“{this.state.quote}”</p>
-                    <p>- {this.state.author}</p>
+                    <p>“{this.state.quote}” <br/>- {this.state.author}</p>
                 </div>
             </footer>
         )
