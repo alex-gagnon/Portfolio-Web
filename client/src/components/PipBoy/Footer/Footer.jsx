@@ -11,7 +11,13 @@ class Footer extends Component {
     }
 
     componentDidMount() {    
-        if (process.env.REACT_APP_CI !== 'false') {
+        if (process.env.REACT_APP_CI === 'test') {
+            this.setState({
+                quote: "Testing Quote",
+                author: "Testing Author"
+            })
+        }
+        else {
             fetch('/api/v1/quotes/random', {headers: {"accepts": "application/json"}})
             .then(res => res.json())
             .then(data => this.setState(data))
