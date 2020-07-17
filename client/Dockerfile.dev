@@ -1,17 +1,7 @@
 FROM node:13.12.0-alpine
-
 WORKDIR /app
-EXPOSE 3000
-
 ENV PATH /app/node_modules/.bin:$PATH
-
 COPY package.json ./
-
-## Install only the packages defined in the package-lock.json (faster than normal npm install)
 RUN npm install
-
-# Add app by copying the contents of the project to the image
 COPY ./ ./
-
-# Run 'npm start' when the container starts
 CMD ["npm", "start"]
