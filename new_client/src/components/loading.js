@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import FadeIn from "react-fade-in";
-import Lottie from "react-lottie";
-import ReactLoading from "react-loading";
-import "bootstrap/dist/css/bootstrap.css";
-import * as legoData from "./images/legoloading.json";
-import * as doneData from "./images/doneloading.json"
+import React, { Component } from "react"
+import FadeIn from "react-fade-in"
+import Lottie from "react-lottie"
+import "bootstrap/dist/css/bootstrap.css"
+import * as legoData from "../images/legoloading.json"
+import * as doneData from "../images/doneloading.json"
+import Portfolio from "./portfolio"
 
 
 const defaultOptions = {
@@ -42,9 +42,9 @@ class Loading extends Component {
                     this.setState({ loading: true })
                     setTimeout(() => {
                         this.setState({ done: true })
-                    }, 1000)
+                    }, 1500)
                 })
-        }, 1200)
+        }, 2000)
     }
 
     render() {
@@ -62,12 +62,11 @@ class Loading extends Component {
                     </div>
                 </FadeIn>
                 ) : (
-                    <h1>Hello</h1>
+                    <Portfolio />
                 )}
             </div>
         )
     }
 }
 
-
-export default Loading;
+export default Loading
