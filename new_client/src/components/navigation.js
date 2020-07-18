@@ -16,6 +16,7 @@ class Navigation extends Component {
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/about">About me</Link></li>
+                        <li><Link to="/projects">Projects</Link></li>
                     </ul>
                     <Switch>
                         <Route exact path="/">
@@ -23,6 +24,9 @@ class Navigation extends Component {
                         </Route>
                         <Route path="/about">
                             <About />
+                        </Route>
+                        <Route>
+                            <Projects />
                         </Route>
                     </Switch>
                 </div>
@@ -33,5 +37,6 @@ class Navigation extends Component {
 
 const Home = () => (<h2>Home</h2>)
 const About = () => (<h2>About</h2>)
+const Projects = () => (<h2>Projects</h2>)
 
 export default Navigation
