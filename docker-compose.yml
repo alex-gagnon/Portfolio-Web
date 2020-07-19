@@ -21,6 +21,7 @@ services:
     client:
         image: agagnon227/multi-client
         container_name: client
+        stdin_open: true
         build:
             context: ./client
             dockerfile: Dockerfile
