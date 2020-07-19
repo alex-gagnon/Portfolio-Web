@@ -10,6 +10,18 @@ class Portfolio extends Component {
     constructor(props) {
         super(props)
 
+        this.getData = this.getData.bind(this)
+    }
+
+    getData = (name) => {
+        const { data } = this.props
+        return data.find(obj => obj.name === name)
+    }
+
+    componentDidUpdate(nextProps) {
+        if (this.props !== nextProps) {
+            this.props = nextProps
+        }
     }
 
     render() {
@@ -28,13 +40,13 @@ class Portfolio extends Component {
                         <main>
                             <Switch>
                                 <Route exact path="/">
-                                    <Home />
+                                    <Home {...this.getData("home")} />
                                 </Route>
                                 <Route path="/about">
-                                    <About />
+                                    <About {...this.getData("about me")} />
                                 </Route>
                                 <Route>
-                                    <Projects />
+                                    <Projects {...this.getData("projects")} />
                                 </Route>
                             </Switch>
                         </main>

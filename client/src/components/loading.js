@@ -2,9 +2,9 @@ import React, { Component } from "react"
 import FadeIn from "react-fade-in"
 import Lottie from "react-lottie"
 import "bootstrap/dist/css/bootstrap.css"
-import * as legoData from "../images/legoloading.json"
-import * as doneData from "../images/doneloading.json"
-import * as failData from "../images/failedloading.json"
+import * as legoData from "../__images__/legoloading.json"
+import * as doneData from "../__images__/doneloading.json"
+import * as failData from "../__images__/failedloading.json"
 import Portfolio from "./portfolio"
 
 const defaultOptions = {
@@ -40,7 +40,8 @@ class Loading extends Component {
         this.state = {
             loading: undefined,
             done: undefined,
-            offline: undefined
+            offline: undefined,
+            data: undefined
         }
     }
 
@@ -52,10 +53,10 @@ class Loading extends Component {
         setTimeout(() => {
             // https://jsonplaceholder.typicode.com/posts
             // /api/v1/data
-            fetch("https://jsonplaceholder.typicode.com/posts", { signal })
+            fetch("/api/v1/data", { signal })
                 .then(resp => resp.json())
                 .then(json => {                    
-                    this.setState({ loading: true })
+                    this.setState({ loading: true, data: json })
                     setTimeout(() => {
                         this.setState({ done: true })
                     }, 1800)
@@ -76,8 +77,7 @@ class Loading extends Component {
     }
 
     render() {
-        console.log(`done: ${this.state.loading}`)
-        console.log(`offline: ${this.state.offline}`)
+        console.log(this.state.data)
         return (
             <div>
                 {!this.state.done && !this.state.offline ? (                    
@@ -94,7 +94,7 @@ class Loading extends Component {
                     </div>
                 </FadeIn>
                 ) : !this.state.offline ? (
-                    <Portfolio />
+                    <Portfolio data={this.state.data} />
                 ) : (
                     <h2>App appears to be offline</h2>
                 )}
