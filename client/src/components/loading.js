@@ -81,9 +81,9 @@ class Loading extends Component {
         return (
             <div>
                 {!this.state.done && !this.state.offline ? (                    
-                <FadeIn>
+                <FadeIn className="loading-frame">
                     <div className="d-flex justify-content-center align-items-center">
-                        <h1>fetching data</h1>
+                        <h1>fetching user data</h1>
                         {!this.state.loading ? (
                             <Lottie options={defaultOptions} height={120} width={120} />
                         ) : !this.state.offline ? (
