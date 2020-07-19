@@ -3,7 +3,12 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import Home from "./home"
 import About from "./about"
 import Projects from "./projects"
-import Footer from "./footer"
+import Nav from "react-bootstrap/Nav"
+import Navbar from "react-bootstrap/Navbar"
+import NavLink from "react-bootstrap/NavLink"
+import NavbarBrand from "react-bootstrap/NavbarBrand"
+import NavbarToggle from "react-bootstrap/esm/NavbarToggle"
+import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse"
 
 
 class Portfolio extends Component {
@@ -26,34 +31,37 @@ class Portfolio extends Component {
 
     render() {
         return (
-            <div>
+            <div className="portfolio-container">
                 <Router>
-                    <div>
-                        <header>                        
-                            <h1>Alex Gagnon</h1>
-                            <ul>
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/about">About me</Link></li>
-                                <li><Link to="/projects">Projects</Link></li>
-                            </ul>
-                        </header>
-                        <main>
-                            <Switch>
-                                <Route exact path="/">
-                                    <Home {...this.getData("home")} />
-                                </Route>
-                                <Route path="/about">
-                                    <About {...this.getData("about me")} />
-                                </Route>
-                                <Route>
-                                    <Projects {...this.getData("projects")} />
-                                </Route>
-                            </Switch>
-                        </main>
-                    </div>
+                    <header>
+                        <Navbar bg="dark" variant="dark" expand="lg" className="sticky-nav">
+                            <NavbarBrand as={Link} to="/">Alex Gagnon</NavbarBrand>
+                            <NavbarToggle aria-controls="basic-navbar-nav" />
+                            <NavbarCollapse id="basic-navbar-nav">
+                                <Nav className="mr-auto">
+                                    <NavLink as={Link} to="/">Home</NavLink>
+                                    <NavLink as={Link} to="/about">About</NavLink>
+                                    <NavLink as={Link} to="/projects">Projects</NavLink>
+                                </Nav>
+                            </NavbarCollapse>
+                        </Navbar>
+                    </header>
+                    <main className="main-container">
+                        <Switch>
+                            <Route exact path="/">
+                                <Home {...this.getData("home")} />
+                            </Route>
+                            <Route path="/about">
+                                <About {...this.getData("about me")} />
+                            </Route>
+                            <Route path="/projects">
+                                <Projects {...this.getData("projects")} />
+                            </Route>
+                        </Switch>
+                    </main>
                 </Router>
-                <footer>
-                    <Footer />
+                <footer className="sticky-footer">
+                    Footer
                 </footer>
             </div>
         )
