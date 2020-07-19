@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 // Import Quote Controllers
-const { getAllQuotes, getRandomQuote, getSingleQuote } = require('../quotes')
+const { getAllQuotes, getRandomQuote, getSingleQuote } = require('../controllers/quotes')
 
 // Quote API routers
 router
