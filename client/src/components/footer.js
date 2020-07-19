@@ -51,7 +51,7 @@ class Footer extends Component {
         return d.getFullYear()
     }
 
-    componentDidMount() {
+    componentDidMount() {          
         this.setState({
             logos: [gitHub, linkedIn, twitter]
         })
