@@ -32,9 +32,10 @@ app.use('/v1/quotes', quoteRouter)
 
 // Data API routers
 const dataRouter = require('./src/routers/data')
+const { fstat, readdir } = require('fs')
 app.use('/v1/data', dataRouter)
 
-// Server
+// API Server
 const port = process.env.APP_SERVER_PORT || 5000
 const server = http.createServer(app)
 server.listen(port, () => console.log(`Server running on port ${port}`))
