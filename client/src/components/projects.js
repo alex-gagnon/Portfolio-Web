@@ -1,5 +1,22 @@
-import React from "react"
+import React, { Component } from "react"
 
-const Projects = () => (<h2>Projects</h2>)
+class Projects extends Component {
+    constructor(props) {
+        super(props)
+
+    }
+
+    render() {
+        return (
+            <div>
+                {this.props.value.map(para => (
+                    <p>
+                        {para}
+                    </p>
+                ))}
+            </div>
+        )
+    }
+}
 
 export default Projects

@@ -3,13 +3,17 @@ import React, { Component } from "react"
 class Home extends Component {
     constructor(props) {
         super(props)
-
+        
     }
 
     render() {
         return (
             <div>
-                <h2>Home</h2>
+                {this.props.value.map(para => (
+                    <h2>
+                        {para}
+                    </h2>
+                ))}
             </div>
         )
     }
