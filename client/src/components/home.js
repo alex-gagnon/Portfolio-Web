@@ -10,9 +10,9 @@ class Home extends Component {
         return (
             <div>
                 {this.props.value.map(para => (
-                    <h2>
+                    <p className="user-para">
                         {para}
-                    </h2>
+                    </p>
                 ))}
             </div>
         )

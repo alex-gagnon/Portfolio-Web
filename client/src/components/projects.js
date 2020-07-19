@@ -10,7 +10,7 @@ class Projects extends Component {
         return (
             <div>
                 {this.props.value.map(para => (
-                    <p>
+                    <p className="user-para">
                         {para}
                     </p>
                 ))}
