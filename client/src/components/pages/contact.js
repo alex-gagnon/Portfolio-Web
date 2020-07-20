@@ -45,24 +45,25 @@ class Contact extends Component {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
-            }
-        })
+            }})
             .then(resp => {
                 if (resp.ok) {
-                    console.log(resp)
                     return resp.json()
                 } else {
                     console.log(resp)
                 }
             })
-            // .then(json => {
-            //     if (json.status === "success") {
-            //         alert("Message sent.")
-            //         this.resetForm()
-            //     } else {
-            //         alert("Message failed to send.")
-            //     }
-            // })
+            .then(json => {
+                if (json.status === "success") {
+                    alert("Message sent.")
+                    this.resetForm()
+                } else {
+                    alert("Message failed to send.")
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
     }
 
