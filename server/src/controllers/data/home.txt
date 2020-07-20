@@ -1,3 +1,7 @@
-My name is Alex Gagnon
-
 I give my team confidence that their product will work by the time it hits production.
+
+I am a software engineer that has specialized in test automation development for B2B and
+B2C applications.
+
+While I am certainly working on improving my web design skill, I am confident in my ability 
+build scalable and robust backend infrastructure.
