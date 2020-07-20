@@ -2,9 +2,9 @@ import React, { Component } from "react"
 import FadeIn from "react-fade-in"
 import Lottie from "react-lottie"
 import "bootstrap/dist/css/bootstrap.css"
-import * as legoData from "../__images__/legoloading.json"
-import * as doneData from "../__images__/doneloading.json"
-import * as failData from "../__images__/failedloading.json"
+import * as legoData from "../__images__/loading/legoloading.json"
+import * as doneData from "../__images__/loading/doneloading.json"
+import * as failData from "../__images__/loading/failedloading.json"
 import Portfolio from "./portfolio"
 
 const defaultOptions = {
@@ -62,7 +62,6 @@ class Loading extends Component {
                     }, 1800)
                 })
                 .catch(e => {
-                    console.log(e)
                     if (e.name === "AbortError") {
                         console.log("Fetch aborted")
                     } else {
@@ -77,7 +76,6 @@ class Loading extends Component {
     }
 
     render() {
-        console.log(this.state.data)
         return (
             <div>
                 {!this.state.done && !this.state.offline ? (                    

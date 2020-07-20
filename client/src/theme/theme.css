@@ -1,0 +1,33 @@
+/* Define toggle-btn design */
+
+.toggle-btn {
+  border-radius: 20px;
+}
+
+/* Define light and dark mode themes */
+
+/* Dark mode */
+#Theme-container.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+#Theme-container.dark-mode button {
+  background-color: black;
+  color: white;
+}
+
+#Theme-container.dark-mode .main-container {
+  border-color: white;
+}
+
+/* Light mode */
+#Theme-container.light-mode {
+  background-color: white;
+  color: black;
+}
+
+#Theme-container.light-mode button {
+  background-color: white;
+  color: black;
+}
