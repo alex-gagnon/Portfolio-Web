@@ -1,19 +1,33 @@
 /* Define toggle-btn design */
 
-.toggle-btn {
-  border-radius: 20px;
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  min-width: 55px;
 }
 
-/* Define light and dark mode themes */
+#toggle-btn {
+  width: 100%;
+  height: 25px;
+  border-radius: 20px;
+  background-color: #364859;
+}
+
+/* Remove outline from appearing on click */
+#toggle-btn:focus {
+  outline: 0;
+}
+
+/* Define dark mode theme */
 
 /* Dark mode */
 #Theme-container.dark-mode {
-  background-color: black;
+  background-color: #364859;
   color: white;
 }
 
 #Theme-container.dark-mode button {
-  background-color: black;
+  background-color: white;
   color: white;
 }
 
@@ -21,13 +35,6 @@
   border-color: white;
 }
 
-/* Light mode */
-#Theme-container.light-mode {
-  background-color: white;
-  color: black;
-}
-
-#Theme-container.light-mode button {
-  background-color: white;
-  color: black;
+#Theme-container.dark-mode .nav-link {
+  color: white;
 }

@@ -13,7 +13,6 @@ import NavbarBrand from "react-bootstrap/NavbarBrand"
 import NavbarToggle from "react-bootstrap/NavbarToggle"
 import NavbarCollapse from "react-bootstrap/NavbarCollapse"
 
-
 class Portfolio extends Component {
     constructor(props) {
         super(props)
@@ -40,7 +39,7 @@ class Portfolio extends Component {
             <div id="portfolio" className="portfolio-container" color-mode="light">
                 <Router>
                     <header>
-                        <Navbar bg="dark" variant="dark" expand="lg" className="sticky-nav">
+                        <Navbar id="top-nav" bg="dark" variant="dark" expand="lg" className="sticky-nav">
                             <NavbarBrand as={Link} to="/">Alex Gagnon</NavbarBrand>
                             <NavbarToggle aria-controls="basic-navbar-nav" />
                             <NavbarCollapse id="basic-navbar-nav">
