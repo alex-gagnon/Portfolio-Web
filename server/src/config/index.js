@@ -1,6 +1,7 @@
 // Database configuration
 const config = {
-    DATA: "TEST"
+    USER: process.env.USER,
+    PASS: process.env.PASS
 };
 
 module.exports = config;

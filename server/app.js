@@ -7,9 +7,6 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const uuid = require('uuid/v4')
 
-// Config
-//const config = require('./src/config/index')
-
 // Initialization
 const app = express()
 app.use(cors())
@@ -24,6 +21,10 @@ app.get('/', (req, res) => {
 app.get('/test', (req, res) => {
     res.send('Working!')
 })
+
+// Email API routers
+const emailRouter = require('./src/routers/email')
+app.use('/', emailRouter)
 
 // Quote API routers
 const quoteRouter = require('./src/routers/quotes')
