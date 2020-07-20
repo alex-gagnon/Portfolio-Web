@@ -38,7 +38,7 @@ class Contact extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        // console.log(this.state)
+        console.log(JSON.stringifythis.state)
 
         fetch("/api/send", {
             method: "POST",
