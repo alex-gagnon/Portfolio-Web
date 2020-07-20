@@ -10,8 +10,8 @@ import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import NavLink from "react-bootstrap/NavLink"
 import NavbarBrand from "react-bootstrap/NavbarBrand"
-import NavbarToggle from "react-bootstrap/esm/NavbarToggle"
-import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse"
+import NavbarToggle from "react-bootstrap/NavbarToggle"
+import NavbarCollapse from "react-bootstrap/NavbarCollapse"
 
 
 class Portfolio extends Component {
