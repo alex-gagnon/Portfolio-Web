@@ -16,7 +16,7 @@ const data = [
         "value": home
     },
     {
-        "name": "about me",
+        "name": "about",
         "value": about
     },
     {
