@@ -4,6 +4,6 @@ import App from '../App';
 
 test('renders loading text', () => {
   const { getByText } = render(<App />)
-  const textElement = getByText(/fetching data/i)
+  const textElement = getByText(/fetching user data/i)
   expect(textElement).toBeInTheDocument()
 })

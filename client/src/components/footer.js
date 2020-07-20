@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Navbar from "react-bootstrap/esm/Navbar"
+import Navbar from "react-bootstrap/Navbar"
 import githubLogo from "../__images__/logos/github.png"
 import linkedInLogo from "../__images__/logos/linkedin.png"
 import twitterLogo from "../__images__/logos/twitter.png"
