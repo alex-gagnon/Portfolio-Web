@@ -5,12 +5,17 @@ const toggleTheme = () => {
     let theme = document.getElementById("Theme-container");
     let currentTheme = theme.className;
     theme.className = currentTheme === "dark-mode" ? "light-mode" : "dark-mode";
+
+    let toggleBtn = document.getElementById("toggle-btn")
+    toggleBtn.className = currentTheme === "dark-mode" ? "on" : "off"
 }
 
 const Theme = () => (
-    <button type="button" name="dark_light" onClick={toggleTheme} title="Toggle theme" class="toggle-btn" >
-        Toggle theme
-    </button>
+    <div class="toggle-container"> 
+        <button id="toggle-btn" className="light-mode" type="button" name="dark_light" onClick={toggleTheme} title="Toggle theme">
+            <span id="toggle-btn__slider"></span>
+        </button>
+    </div>
 )
 
 export default Theme
