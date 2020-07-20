@@ -1,8 +1,9 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
-import Home from "./home"
-import About from "./about"
-import Projects from "./projects"
+import Home from "./pages/home"
+import About from "./pages/about"
+import Projects from "./pages/projects"
+import More from "./pages/more"
 import Footer from "./footer"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
@@ -10,12 +11,13 @@ import NavLink from "react-bootstrap/NavLink"
 import NavbarBrand from "react-bootstrap/NavbarBrand"
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle"
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse"
-import Button from "react-bootstrap/Button"
-
 
 class Portfolio extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            links: ["about", "projects", "more"]
+        }
 
         this.getData = this.getData.bind(this)
     }
@@ -44,6 +46,7 @@ class Portfolio extends Component {
                                     <NavLink as={Link} to="/">Home</NavLink>
                                     <NavLink as={Link} to="/about">About</NavLink>
                                     <NavLink as={Link} to="/projects">Projects</NavLink>
+                                    <NavLink as={Link} to="/more">More</NavLink>
                                 </Nav>
                             </NavbarCollapse>
                         </Navbar>
@@ -54,10 +57,13 @@ class Portfolio extends Component {
                                 <Home {...this.getData("home")} />
                             </Route>
                             <Route path="/about">
-                                <About {...this.getData("about me")} />
+                                <About {...this.getData("about")} />
                             </Route>
                             <Route path="/projects">
                                 <Projects {...this.getData("projects")} />
+                            </Route>
+                            <Route path="/more">
+                                <More {...this.getData("more")} />
                             </Route>
                         </Switch>
                     </main>
