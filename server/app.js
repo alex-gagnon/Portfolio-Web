@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config("../.env")
 
 // Express App Setup
 const express = require('express')
@@ -23,8 +23,8 @@ app.get('/test', (req, res) => {
 })
 
 // Email API routers
-const emailRouter = require('./src/routers/email')
-app.use('/', emailRouter)
+const emailRouter = require('./src/auth/gmail')
+app.use('/send', emailRouter)
 
 // Quote API routers
 const quoteRouter = require('./src/routers/quotes')

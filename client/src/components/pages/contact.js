@@ -38,7 +38,6 @@ class Contact extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        console.log(JSON.stringifythis.state)
 
         fetch("/api/send", {
             method: "POST",
@@ -48,15 +47,22 @@ class Contact extends Component {
                 "Content-Type": "application/json"
             }
         })
-            .then(resp => (resp.json()))
-            .then(json => {
-                if (json.status === "success") {
-                    alert("Message sent.")
-                    this.resetForm()
+            .then(resp => {
+                if (resp.ok) {
+                    console.log(resp)
+                    return resp.json()
                 } else {
-                    alert("Message failed to send.")
+                    console.log(resp)
                 }
             })
+            // .then(json => {
+            //     if (json.status === "success") {
+            //         alert("Message sent.")
+            //         this.resetForm()
+            //     } else {
+            //         alert("Message failed to send.")
+            //     }
+            // })
 
     }
 
@@ -78,7 +84,7 @@ class Contact extends Component {
                     <textarea className="form-control" rows="5" 
                         value={this.state.message} onChange={this.onMessageChange} />
                 </div>
-                <Button type="submit">Submit</Button>
+                <Button type="submit" size="lg">Submit</Button>
             </form>
         )
     }
