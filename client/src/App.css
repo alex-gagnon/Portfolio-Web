@@ -15,8 +15,6 @@ footer {
 }
 
 .App-container {
-  /* background-color: #282c34; */
-  background-color: white;
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: black;
@@ -30,20 +28,23 @@ footer {
 }
 
 .portfolio-container {
+  min-height: 100vh;
   overflow: hidden;
   display: block;
   position: relative;
 }
 
 .loading-container {
+  min-height: 100vh;
+  background-color: #557a97;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
 }
 
-.stick-nav {
+.sticky-nav {
   position: sticky;
   top: 0;
 }
@@ -60,20 +61,20 @@ footer {
   width: 100%;
  }
 
- .footer-top-container nav {
-   min-width: 100%;
- }
+.footer-top-container nav {
+  width: 100%;
+}
 
- .logo-container {
+.logo-container {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
 
- .logo-link {
-   min-height: 72px;
-   max-width: 72px;
- }
+.logo-link {
+  min-height: 72px;
+  max-width: 72px;
+}
 
 .user-para {
   text-align: left;
