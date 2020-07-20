@@ -10,8 +10,8 @@ class Projects extends Component {
         if (this.props.value) {            
             return (
                 <div>
-                    {this.props.value.map(para => (
-                        <p className="user-para">
+                    {this.props.value.map((para, i) => (
+                        <p id={`para-${i}`} key={`home-para-${i}`} className="user-para">
                             {para}
                         </p>
                     ))}

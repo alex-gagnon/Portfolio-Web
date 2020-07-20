@@ -5,12 +5,14 @@ import About from "./pages/about"
 import Projects from "./pages/projects"
 import More from "./pages/more"
 import Footer from "./footer"
+import Theme from "../theme/theme"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import NavLink from "react-bootstrap/NavLink"
 import NavbarBrand from "react-bootstrap/NavbarBrand"
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle"
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse"
+
 
 class Portfolio extends Component {
     constructor(props) {
@@ -35,7 +37,7 @@ class Portfolio extends Component {
 
     render() {
         return (
-            <div className="portfolio-container">
+            <div id="portfolio" className="portfolio-container" color-mode="light">
                 <Router>
                     <header>
                         <Navbar bg="dark" variant="dark" expand="lg" className="sticky-nav">
@@ -48,6 +50,7 @@ class Portfolio extends Component {
                                     <NavLink as={Link} to="/projects">Projects</NavLink>
                                     <NavLink as={Link} to="/more">More</NavLink>
                                 </Nav>
+                                <Theme />
                             </NavbarCollapse>
                         </Navbar>
                     </header>

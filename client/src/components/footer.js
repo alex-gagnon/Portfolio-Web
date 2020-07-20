@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import Navbar from "react-bootstrap/esm/Navbar"
-import githubLogo from "../__images__/GitHub-Logos/GitHub-Mark-64px.png"
-import linkedInLogo from "../__images__/LinkedIn-Logos/LI-In-Bug.png"
-import twitterLogo from "../__images__/Twitter-Logos/Twitter_Logo_WhiteOnBlue/Twitter_Logo_WhiteOnBlue.png"
+import githubLogo from "../__images__/logos/github.png"
+import linkedInLogo from "../__images__/logos/linkedin.png"
+import twitterLogo from "../__images__/logos/twitter.png"
 
 
 const gitHub = {
@@ -63,8 +63,8 @@ class Footer extends Component {
                 <div className="footer-top-container">                    
                     <Navbar>
                         <div className="logo-container">
-                            {this.state.logos.map(logo => (
-                                <Logos {...logo} />
+                            {this.state.logos.map((logo, i) => (
+                                <Logos key={`logo-${i}`} {...logo} />
                             ))}
                         </div>
                     </Navbar>
