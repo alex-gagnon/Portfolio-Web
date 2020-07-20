@@ -16,16 +16,14 @@ const linkedIn = {
     id: "linkedIn-logo", 
     link: "https://www.linkedin.com/in/agagnon313/", 
     logo: linkedInLogo, 
-    alt: "LinkedIn",
-    style: { "width": "100%"}
+    alt: "LinkedIn"
 }
 
 const twitter = {
     id: "twitter-logo",
     link: "https://youtu.be/ub82Xb1C8os",
     logo: twitterLogo,
-    alter: "Twitter",
-    style: { "width": "80%"}
+    alt: "Twitter"
 }
 
 const Logos = (props) => {

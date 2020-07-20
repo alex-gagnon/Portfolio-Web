@@ -41,7 +41,9 @@ class Portfolio extends Component {
                 <Router>
                     <header>
                         <Navbar id="top-nav" bg="dark" variant="dark" expand="lg" className="sticky-nav">
-                            <NavbarBrand as={Link} to="/">Alex Gagnon</NavbarBrand>
+                            <NavbarBrand as={Link} to="/">
+                                <img src={`${process.env.PUBLIC_URL}/logos/android-chrome-192x192.png`} alt="Alex Gagnon" height={60} width={60} />
+                            </NavbarBrand>
                             <NavbarToggle aria-controls="basic-navbar-nav" />
                             <NavbarCollapse id="basic-navbar-nav">
                                 <Nav className="mr-auto">
