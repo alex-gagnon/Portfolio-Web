@@ -23,7 +23,7 @@ const twitter = {
     id: "twitter-logo",
     link: "https://youtu.be/ub82Xb1C8os",
     logo: twitterLogo,
-    alter: "Twitter"
+    alt: "Twitter"
 }
 
 const Logos = (props) => {
