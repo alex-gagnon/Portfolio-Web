@@ -1,21 +1,23 @@
 import React from "react"
 import './theme.css'
+import ToggleButton from "react-bootstrap/ToggleButton"
+import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup"
 
 const toggleTheme = () => {
-    let theme = document.getElementById("Theme-container");
-    let currentTheme = theme.className;
-    theme.className = currentTheme === "dark-mode" ? "light-mode" : "dark-mode";
-
-    let toggleBtn = document.getElementById("toggle-btn")
-    toggleBtn.className = currentTheme === "dark-mode" ? "on" : "off"
+    let theme = document.getElementById("Theme-container")
+    let currentTheme = theme.className
+    theme.className = currentTheme === "dark-mode" ? "light-mode" : "dark-mode"
 }
 
 const Theme = () => (
-    <div class="toggle-container"> 
-        <button id="toggle-btn" className="light-mode" type="button" name="dark_light" onClick={toggleTheme} title="Toggle theme">
-            <span id="toggle-btn__slider"></span>
-        </button>
-    </div>
+    <ToggleButtonGroup type="radio" name="theme-options" defaultValue="toggle-light" onChange={toggleTheme}>            
+        <ToggleButton id="toggle-btn__light" variant="outline-light" value="toggle-light">
+            Light
+        </ToggleButton>
+        <ToggleButton id="toggle-btn__dark" variant="outline-secondary" value="toggle-dark" style={{ "color": "white" }}>
+            Dark
+        </ToggleButton>
+    </ToggleButtonGroup>
 )
 
 export default Theme

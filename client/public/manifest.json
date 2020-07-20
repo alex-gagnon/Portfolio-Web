@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
+  "short_name": "Alex Portfolio",
+  "name": "Alex Prortfolio",
+=======
   "short_name": "React App",
   "name": "Create React App Sample",
+>>>>>>> main
   "icons": [
     {
       "src": "favicon.ico",

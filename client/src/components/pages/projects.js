@@ -11,7 +11,7 @@ class Projects extends Component {
             return (
                 <div>
                     {this.props.value.map((para, i) => (
-                        <p id={`para-${i}`} key={`home-para-${i}`} className="user-para">
+                        <p id={`projects-para-${i}`} key={`projects-para-${i}`} className="user-para">
                             {para}
                         </p>
                     ))}

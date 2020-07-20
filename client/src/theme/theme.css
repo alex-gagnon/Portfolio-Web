@@ -1,33 +1,8 @@
-/* Define toggle-btn design */
-
-.toggle-container {
-  display: flex;
-  justify-content: center;
-  min-width: 55px;
-}
-
-#toggle-btn {
-  width: 100%;
-  height: 25px;
-  border-radius: 20px;
-  background-color: #364859;
-}
-
-/* Remove outline from appearing on click */
-#toggle-btn:focus {
-  outline: 0;
-}
-
 /* Define dark mode theme */
 
 /* Dark mode */
 #Theme-container.dark-mode {
   background-color: #364859;
-  color: white;
-}
-
-#Theme-container.dark-mode button {
-  background-color: white;
   color: white;
 }
 
