@@ -10,7 +10,7 @@ const toggleTheme = () => {
 }
 
 const Theme = () => (
-    <ToggleButtonGroup type="radio" name="theme-options" defaultValue="toggle-light" onChange={toggleTheme}>            
+    <ToggleButtonGroup id="toggle-btn__group" type="radio" name="theme-options" defaultValue="toggle-light" onChange={toggleTheme}>            
         <ToggleButton id="toggle-btn__light" variant="outline-light" value="toggle-light">
             Light
         </ToggleButton>
