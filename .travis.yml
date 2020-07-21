@@ -15,3 +15,15 @@ after_success:
     - docker push $DOCKER_ID/multi-client
     - docker push $DOCKER_ID/multi-nginx
     - docker push $DOCKER_ID/multi-api
+
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-1"
+    app: "Portfolio"
+    env: "Portfolio"
+    bucket_name: "elasticbeanstalk-us-east-1-550423008224"
+    on:
+        branch: main
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+        secure: "$AWS_SECRET_KEY"
