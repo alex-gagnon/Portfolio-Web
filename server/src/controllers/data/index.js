@@ -4,7 +4,10 @@ const getFile = (filename) => {
     let text = fs.readFileSync(`${__dirname}/${filename}`, 'utf-8')
 
     // Split text by double new line
-    return text.split(/\n\s*\n/).map(str => str.replace(/\r?\n|\r/g, ''))
+    let splitText = text.split(/\n\s*\n/)
+    // Replace single new lines with a space. Remove all occurences of \r and \n
+    let formattedText = splitText.map(str => str.replace(/\r?|\r/g, '').replace(/\s*\n/g, ' '))
+    return formattedText
 }
 
 let home = getFile('home.txt')
