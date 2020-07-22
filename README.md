@@ -19,7 +19,7 @@ It is a personal portfolio to build upon my developer skills and showcase my wor
 The best way to build is via docker containers. You do not need to install packages locally via `npm` unless you
 are adding new libraries.
 
-## How it works
+### How it works
 
 * Client and Server can each be run separately by navigating into their respective directories and running `npm run`, `npm test`, etc.
 * When started through `docker-compose`, the client and server containers are linked through an `nginx` reverse proxy that acts as the
