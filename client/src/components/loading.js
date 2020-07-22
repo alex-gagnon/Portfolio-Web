@@ -51,15 +51,13 @@ class Loading extends Component {
         
         setTimeout(() => controller.abort(), 10000)
         setTimeout(() => {
-            // https://jsonplaceholder.typicode.com/posts
-            // /api/v1/data
             fetch("/api/v1/data", { signal })
                 .then(resp => resp.json())
                 .then(json => {                    
                     this.setState({ loading: true, data: json })
                     setTimeout(() => {
                         this.setState({ done: true })
-                    }, 1800)
+                    }, 1200)
                 })
                 .catch(e => {
                     if (e.name === "AbortError") {
@@ -70,7 +68,7 @@ class Loading extends Component {
                     this.setState({ loading: true })
                     setTimeout(() => {
                         this.setState({ offline: true })
-                    }, 1800)
+                    }, 1200)
                 })
         }, 1000)
     }
