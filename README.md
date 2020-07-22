@@ -3,16 +3,19 @@
 This is a multi-container docker environment that utilizes Travis CI for CI\CD and deploys to AWS.
 It is a personal portfolio to build upon my developer skills and showcase my work.
 
+## Current Status of Main
 
 [![Build Status](https://travis-ci.org/alex-gagnon/Portfolio-Web.svg?branch=main)](https://travis-ci.org/github/alex-gagnon/Portfolio-Web)
 
-1. Push code in master branch to github
-2. Travis automatically pulls repo
-3. Travis builds test images for React and Node, tests code
-4. Travis builds prod images
-5. Travis pushes built prod images to Docker Hub
-6. Travis pushes project to AWS EB
-7. EB reads Dockerrun.aws.json, pulls images from Docker Hub, deploys
+## Production
+
+1. Push code in branch to Github
+2. Travis automatically pulls repository
+3. Travis builds test images for React and Node, and then runs tests
+4. Travis builds production images
+5. Travis pushes built production images to Docker Hub repository
+6. Travis pushes project to AWS ElasticBeanstalk
+7. AWS ElasticBeanstalk reads Dockerrun.aws.json, pulls images from Docker Hub repository and deploys
 
 ## Development
 
