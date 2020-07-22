@@ -1,13 +1,16 @@
 const path = require('path')
 const { google } = require('googleapis')
 const { authenticate } = require('@google-cloud/local-auth')
-
 const gmail = google.gmail('v1')
+const config = require('../../config')
+const { fstat } = require('fs')
 
-async function runSample() {
+// Run this file to generate code to request refresh and access tokens
+
+async function send(data) {
     // Obtain user credentials to use for the request
     const auth = await authenticate({
-        keyfilePath: path.join(__dirname, './oauth2.keys.json'),
+        keyfilePath: path.join(__dirname, 'auth', 'oauth2.keys.json'),
         scopes: [
             'https://mail.google.com',
             'https://www.googleapis.com/auth/gmail.modify',            
@@ -17,17 +20,18 @@ async function runSample() {
     })
     google.options({ auth })
 
-    const subject = "Hello"
+
+    // Send message
+    const subject = "Hello test"
     const utf8Subject = `=?utf-8?B?${Buffer.from(subject).toString('base64')}?=`
     const messageParts = [
-        'From: Alex <alexgagnon227@gmail.com',
-        'To: Alex <alexgagnon227@gmail.com>',
+        `From: Alex <alexgagnon227@gmail.com>`,
+        `To: Alex <alexgagnon227@gmail.com>`,
         'Content-Type: text/html; charset=utf-8',
         'MIME-Version: 1.0',
         `Subject: ${utf8Subject}`,
         '',
-        'Just testing',
-        'Yay, it worked'
+        'Heres hoping it works'
     ]
     const message = messageParts.join('\n')
 
@@ -45,12 +49,13 @@ async function runSample() {
             raw: encodedMessage
         }
     })
+    
     console.log(res.data)
     return res.data
 }
 
 if (module === require.main) {
-    runSample().catch(console.error)
+    send().catch(console.error)
 }
 
-module.exports = runSample
+module.exports = send
