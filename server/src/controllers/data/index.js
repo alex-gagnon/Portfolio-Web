@@ -35,6 +35,4 @@ const data = [
     return o
 })
 
-console.log(data)
-
 module.exports = data
