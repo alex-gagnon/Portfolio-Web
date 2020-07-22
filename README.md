@@ -2,6 +2,18 @@
 
 This is a personal portfolio to showcase my work.
 
+
+[![Build Status](https://travis-ci.org/github/alex-gagnon/Portfolio-Web?branch=main)](https://travis-ci.org/github/alex-gagnon/Portfolio-Web)
+
+1. Push code in master branch to github
+2. Travis automatically pulls repo
+3. Travis builds test images for React and Node, tests code
+4. Travis builds prod images
+5. Travis pushes built prod images to Docker Hub
+6. Travis pushes project to AWS EB
+7. EB reads Dockerrun.aws.json, pulls images from Docker Hub, deploys
+
+
 ## Pre-Requisites
 
 * Docker
