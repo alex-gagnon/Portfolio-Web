@@ -23,8 +23,8 @@ app.get('/test', (req, res) => {
 })
 
 // Email API routers
-const emailRouter = require('./src/routers/email')
-app.use('/send', emailRouter)
+// const emailRouter = require('./src/routers/email')
+// app.use('/send', emailRouter)
 
 // Quote API routers
 const quoteRouter = require('./src/routers/quotes')

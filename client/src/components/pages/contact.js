@@ -63,6 +63,7 @@ class Contact extends Component {
             })
             .catch(err => {
                 console.log(err)
+                alert("Message failed to send.")
             })
 
     }

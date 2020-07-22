@@ -5,6 +5,7 @@ import About from "./pages/about"
 import Projects from "./pages/projects"
 import Contact from "./pages/contact"
 import More from "./pages/more"
+import NoMatch from './nomatch'
 import Footer from "./footer"
 import Theme from "./theme/theme"
 import Nav from "react-bootstrap/Nav"
@@ -50,7 +51,7 @@ class Portfolio extends Component {
                                     <NavLink as={Link} to="/">Home</NavLink>
                                     <NavLink as={Link} to="/about">About</NavLink>
                                     <NavLink as={Link} to="/projects">Projects</NavLink>
-                                    <NavLink as={Link} to="/contact">Contact</NavLink>
+                                    {/* <NavLink as={Link} to="/contact">Contact</NavLink> */}
                                     <NavLink as={Link} to="/more">More</NavLink>
                                 </Nav>
                                 <Theme />
@@ -68,12 +69,13 @@ class Portfolio extends Component {
                             <Route path="/projects">
                                 <Projects {...this.getData("projects")} />
                             </Route>
-                            <Route path="/contact">
+                            {/* <Route path="/contact">
                                 <Contact />
-                            </Route>
+                            </Route> */}
                             <Route path="/more">
                                 <More {...this.getData("more")} />
                             </Route>
+                            <Route component={NoMatch} />
                         </Switch>
                     </main>
                 </Router>
