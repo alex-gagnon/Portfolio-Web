@@ -48,6 +48,16 @@ describe('Quotes Data', () => {
                     done()
                 })
         })
+        it('should get a all quote ids as integers', done => {
+            chai.request(app)
+                .get(baseUrl)
+                .end((err, resp) => {
+                    resp.body.quotes.map(obj => {
+                        assert.isNumber(obj.id)
+                    })
+                    done()
+                })
+        })
     })
 
     const randomUrl = `${baseUrl}/random`
@@ -87,7 +97,8 @@ describe('Quotes Data', () => {
         })
     })
 
-    const singleUrl = `${baseUrl}/5`
+    const idToCheck = 5
+    const singleUrl = `${baseUrl}/quote/${idToCheck}`
     describe(`GET ${singleUrl}`, () => {
         // Test to get a single quote with an id of 5
         it('should get a quote with an id of 5', done => {
@@ -100,7 +111,7 @@ describe('Quotes Data', () => {
         })
         it('should get a single quote and contain a quote string', done => {
             chai.request(app)
-                .get(randomUrl)
+                .get(singleUrl)
                 .end((err, resp) => {
                     assert.isString(resp.body.quote)
                     done()
@@ -108,17 +119,18 @@ describe('Quotes Data', () => {
         })
         it('should get a single quote and contain an author string', done => {
             chai.request(app)
-                .get(randomUrl)
+                .get(singleUrl)
                 .end((err, resp) => {
                     assert.isString(resp.body.author)
                     done()
                 })
         })
-        it('should get a single quote and contain an id integer', done => {
+        it(`should get a single quote and contain an id integer that is equal to ${idToCheck}`, done => {
             chai.request(app)
-                .get(randomUrl)
+                .get(singleUrl)
                 .end((err, resp) => {
                     assert.isNumber(resp.body.id)
+                    assert.equal(resp.body.id, 5)
                     done()
                 })
         })
