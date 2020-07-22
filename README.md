@@ -65,4 +65,4 @@ NOTE: This assumes you have an account with AWS
 
 ## LICENSE
 
-This is LISCENSED with Apache 2.0. See [LICENSE](LICENSE)
+This is LICENSED with Apache 2.0. See [LICENSE](LICENSE)
