@@ -1,7 +1,7 @@
 version: "3"
 services:
     nginx:
-        image: agagnon227/multi-nginx
+        image: agagnon227/multi-nginx-dev
         container_name: nginx
         restart: always
         build:
@@ -9,8 +9,13 @@ services:
             dockerfile: Dockerfile.dev
         ports:
             - "8080:80"
+        volumes:
+            - ./nginx.conf:/etc/nginx/default.conf
+        depends_on: 
+            - 'client'
+            - 'api'
     api:
-        image: agagnon227/multi-api
+        image: agagnon227/multi-api-dev
         container_name: api
         build:
             context: ./server
@@ -19,7 +24,7 @@ services:
             - /app/node_modules
             - ./server:/app
     client:
-        image: agagnon227/multi-client
+        image: agagnon227/multi-client-dev
         container_name: client
         stdin_open: true
         build:
