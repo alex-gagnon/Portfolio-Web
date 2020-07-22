@@ -3,7 +3,7 @@
 This is a personal portfolio to showcase my work.
 
 
-[![Build Status](https://travis-ci.org/github/alex-gagnon/Portfolio-Web?branch=main)](https://travis-ci.org/github/alex-gagnon/Portfolio-Web)
+[![Build Status](https://travis-ci.org/alex-gagnon/Portfolio-Web.svg?branch=main)](https://travis-ci.org/github/alex-gagnon/Portfolio-Web)
 
 1. Push code in master branch to github
 2. Travis automatically pulls repo
