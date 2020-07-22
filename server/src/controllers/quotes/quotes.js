@@ -1,8 +1,8 @@
 
 // source: https://abstracta.us/blog/tools/ultimate-list-100-software-testing-quotes/
 
-const quotes = [
-    {quote: "The most exciting phrase to hear in science, the one that heralds discoveries, is not ‘Eureka!’ but ‘Now that’s funny…", author: "Isaac Asimov" },
+const data = [
+    {quote: "The most exciting phrase to hear in science, the one that heralds discoveries, is not ‘Eureka!’ but ‘Now that’s funny…’", author: "Isaac Asimov" },
     {quote: "We only see what we know.", author: "Goethe"},
     {quote: "Testing is an infinite process of comparing the invisible to the ambiguous in order to avoid the unthinkable happening to the anonymous.", author: "James Bach" },
     {quote: "Testers don’t like to break things; they like to dispel the illusion that things work.", author: "Kaner, Bach, Pettichord"},
@@ -19,6 +19,10 @@ const quotes = [
     {quote: "Discovering the unexpected is more important than confirming the known.", author: "George E. P. Box"},
 ]
 
-quotes.map((obj, index) => obj.id = index)
+data.map((obj, index) => obj.id = index)
+
+const quotes = {
+    quotes: data
+}
 
 module.exports = quotes;

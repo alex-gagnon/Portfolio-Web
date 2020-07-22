@@ -1,8 +1,10 @@
 const fs = require('fs');
 
 const getFile = (filename) => {
+    let text = fs.readFileSync(`${__dirname}/${filename}`, 'utf-8')
+
     // Split text by double new line
-    return fs.readFileSync(`${__dirname}/${filename}`, 'utf-8').split(/(\r\n){2}/)
+    return text.split(/\n\s*\n/).map(str => str.replace(/\r?\n|\r/g, ''))
 }
 
 let home = getFile('home.txt')
@@ -27,12 +29,10 @@ const data = [
         "name": "more",
         "value": more
     }
-].map((o, index) => (
-    {
-        ...o, 
-        _id: index, 
-        isActive: index === 0 ? true : false
-    }
-))
+].map((obj, index) => {
+    let o = Object.assign({}, obj)
+    o._id = index
+    return o
+})
 
 module.exports = data

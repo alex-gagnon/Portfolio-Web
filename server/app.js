@@ -7,9 +7,6 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const uuid = require('uuid/v4')
 
-// Config
-//const config = require('./src/config/index')
-
 // Initialization
 const app = express()
 app.use(cors())
@@ -25,6 +22,10 @@ app.get('/test', (req, res) => {
     res.send('Working!')
 })
 
+// Email API routers
+// const emailRouter = require('./src/routers/email')
+// app.use('/send', emailRouter)
+
 // Quote API routers
 const quoteRouter = require('./src/routers/quotes')
 // Start of path needs to match client proxy path ('/api')
@@ -39,3 +40,5 @@ app.use('/v1/data', dataRouter)
 const port = process.env.APP_SERVER_PORT || 5000
 const server = http.createServer(app)
 server.listen(port, () => console.log(`Server running on port ${port}`))
+
+module.exports = app
