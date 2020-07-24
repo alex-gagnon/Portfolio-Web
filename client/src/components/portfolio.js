@@ -51,7 +51,7 @@ class Portfolio extends Component {
                                     <NavLink as={Link} to="/">Home</NavLink>
                                     <NavLink as={Link} to="/about">About</NavLink>
                                     <NavLink as={Link} to="/projects">Projects</NavLink>
-                                    {/* <NavLink as={Link} to="/contact">Contact</NavLink> */}
+                                    <NavLink as={Link} to="/contact">Contact</NavLink>
                                     <NavLink as={Link} to="/more">More</NavLink>
                                 </Nav>
                                 <Theme />
@@ -69,9 +69,9 @@ class Portfolio extends Component {
                             <Route path="/projects">
                                 <Projects {...this.getData("projects")} />
                             </Route>
-                            {/* <Route path="/contact">
+                            <Route path="/contact">
                                 <Contact />
-                            </Route> */}
+                            </Route>
                             <Route path="/more">
                                 <More {...this.getData("more")} />
                             </Route>
