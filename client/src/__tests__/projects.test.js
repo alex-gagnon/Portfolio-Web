@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Projects from '../components/pages/projects';
+import { Projects } from '../components/pages';
 
 
 describe('should render projects page without api connection', () => {

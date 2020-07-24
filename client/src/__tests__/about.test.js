@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import About from '../components/pages/about';
+import { About } from '../components/pages';
 
 
 test('should render about page h2 header', () => {

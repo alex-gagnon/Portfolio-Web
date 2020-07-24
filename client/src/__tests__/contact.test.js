@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Contact from '../components/pages/contact';
+import { Contact } from '../components/pages';
 
 
 test('should render contact page h2 header', () => {

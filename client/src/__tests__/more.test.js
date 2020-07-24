@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import More from '../components/pages/more';
+import { More } from '../components/pages';
 
 
 describe('should render more page without api connection', () => {
