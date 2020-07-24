@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Error from '../components/pages/error';
+import { Error } from '../components/pages';
 
 jest.mock("react-router-dom", () => ({
     ...jest.requireActual("react-router-dom"),

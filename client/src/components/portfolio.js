@@ -1,11 +1,12 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
-import Home from "./pages/home"
-import About from "./pages/about"
-import Projects from "./pages/projects"
-import Contact from "./pages/contact"
-import More from "./pages/more"
-import Error from './pages/error'
+import { Home, About, Projects, Contact, More, Error } from './pages'
+// import Home from "./pages/home"
+// import About from "./pages/about"
+// import Projects from "./pages/projects"
+// import Contact from "./pages/contact"
+// import More from "./pages/more"
+// import Error from './pages/error'
 import Footer from "./footer"
 import Theme from "./theme/theme"
 import Nav from "react-bootstrap/Nav"
