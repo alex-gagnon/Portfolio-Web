@@ -5,7 +5,7 @@ import About from "./pages/about"
 import Projects from "./pages/projects"
 import Contact from "./pages/contact"
 import More from "./pages/more"
-import NoMatch from './nomatch'
+import Error from './pages/error'
 import Footer from "./footer"
 import Theme from "./theme/theme"
 import Nav from "react-bootstrap/Nav"
@@ -75,7 +75,7 @@ class Portfolio extends Component {
                             <Route path="/more">
                                 <More {...this.getData("more")} />
                             </Route>
-                            <Route component={NoMatch} />
+                            <Route component={Error} />
                         </Switch>
                     </main>
                 </Router>
