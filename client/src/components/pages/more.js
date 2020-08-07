@@ -1,11 +1,7 @@
 import React, { Component } from "react"
 
 class More extends Component {
-    constructor(props) {
-        super(props)
-        
-    }
-
+    
     render() {
         if (this.props.value) {            
             return (
